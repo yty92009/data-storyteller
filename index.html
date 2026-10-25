@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="业务数据分析师的个人知识库 —— 数据分析技能、方法论、BI 与 AI 知识">
+<title>数据分析 · 个人知识库</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a class="logo" href="#hero">📊 <span>数据分析·知识库</span></a>
+    <nav id="nav">
+      <a href="#about">关于我</a>
+      <a href="#skills">技能</a>
+      <a href="#methods">分析方法</a>
+      <a href="#bi">BI</a>
+      <a href="#ai">AI</a>
+      <a href="#roadmap">路线图</a>
+      <a href="#notes">笔记</a>
+      <a href="#contact">联系</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌙</button>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="hero">
+  <div class="container hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow">Business Data Analyst</p>
+      <h1>你好，我是 <span class="accent">Ethan</span></h1>
+      <p class="lead">一名贴近业务的数据分析师——<strong>从业务问题出发，用数据回答</strong>。既能打通从数据获取、数仓开发到治理调度的全链路技术，也能把数字翻译成业务语言。这里记录我学到的技能、方法论与思考。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#skills">浏览技能</a>
+        <a class="btn btn-ghost" href="#notes">学习笔记</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>知识库速览</h3>
+      <ul class="stat-list">
+        <li><span id="statSkills">4</span> 大能力域</li>
+        <li><span id="statMethods">9</span> 个分析方法</li>
+        <li><span id="statNotes">0</span> 篇学习笔记（持续更新）</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<main class="container">
+
+  <!-- 关于我 -->
+  <section id="about" class="section reveal">
+    <h2 class="section-title">关于我</h2>
+    <div class="about-grid">
+      <div class="card">
+        <h3>👋 简介</h3>
+        <p>我是一名贴近业务的数据分析师。我相信数据的价值不在取数本身，而在回答业务问题——所以我的工作从理解业务开始：分摊规则怎么定、口径为什么对不上、指标异常背后是哪个业务动作。</p>
+        <p>同时，我掌握从数据获取、数仓开发到调度运维、数据治理的全链路技术能力，能把自己的业务想法亲手落地成数据，而不是把需求转手给别人。擅长把复杂的业务问题拆解为可量化的分析问题，用业务语言而非技术语言传递洞察。</p>
+      </div>
+      <div class="card">
+        <h3>🎯 专注领域</h3>
+        <ul class="tag-list">
+          <li>商业分析</li><li>用户增长</li><li>经营分析</li>
+          <li>数据可视化</li><li>指标体系</li><li>A/B 实验</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🧰 工具箱</h3>
+        <ul class="tag-list">
+          <li>SQL</li><li>Python</li><li>RPA</li>
+          <li>Tableau</li><li>Power BI</li><li>帆软 FineBI</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 技能 -->
+  <section id="skills" class="section reveal">
+    <h2 class="section-title">个人技能</h2>
+    <p class="section-desc">覆盖数据获取、数仓开发、调度运维到数据治理的完整数据链路，点击任一环节查看具体技能。</p>
+    <div class="card pipeline-card">
+      <h3>🔗 数据全链路</h3>
+      <div class="pipeline">
+        <button class="pipe-node" data-stage="acquire">
+          <span class="pipe-icon">📥</span>
+          <span class="pipe-name">数据获取</span>
+          <span class="pipe-sub">API · 自动下载 · 爬虫</span>
+        </button>
+        <span class="pipe-arrow" aria-hidden="true">➜</span>
+        <button class="pipe-node" data-stage="develop">
+          <span class="pipe-icon">🧱</span>
+          <span class="pipe-name">数仓开发</span>
+          <span class="pipe-sub">分层建模 · 清洗 · 入库</span>
+        </button>
+        <span class="pipe-arrow" aria-hidden="true">➜</span>
+        <button class="pipe-node" data-stage="schedule">
+          <span class="pipe-icon">⚙️</span>
+          <span class="pipe-name">调度与运维</span>
+          <span class="pipe-sub">Airflow · 质量门禁</span>
+        </button>
+        <span class="pipe-arrow" aria-hidden="true">➜</span>
+        <button class="pipe-node" data-stage="govern">
+          <span class="pipe-icon">🛡️</span>
+          <span class="pipe-name">数据治理</span>
+          <span class="pipe-sub">口径 · 分摊规则 · 血缘 · 权限</span>
+        </button>
+      </div>
+      <p class="pipe-hint">👆 点击任一环节，查看该环节的具体技能与实践</p>
+    </div>
+    <div class="card bi-standalone">
+      <h3>📊 BI 与可视化</h3>
+      <p>基于链路产出的可信数据，搭建看板与指标体系，让数据「看得懂」。</p>
+      <ul class="tag-list">
+        <li>Tableau</li><li>Power BI</li>
+        <li>帆软 FineBI / FineReport</li><li>指标体系建设</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 分析方法 -->
+  <section id="methods" class="section reveal">
+    <h2 class="section-title">分析方法</h2>
+    <div class="methods-grid">
+      <div class="card method-card">
+        <span class="method-no">01</span>
+        <h3>5W2H 分析</h3>
+        <p>从 What / Why / Who / When / Where / How / How much 七个维度全面定义业务问题，是需求拆解的第一步。</p>
+      </div>
+      <div class="card method-card">
+        <span class="method-no">02</span>
+        <h3>杜邦分析法</h3>
+        <p>将核心指标逐层拆解为子指标，定位经营问题的驱动因素，常用于营收与利润分析。</p>
+      </div>
+      <div class="card method-card">
+        <span class="method-no">03</span>
+        <h3>流量漏斗分析</h3>
+        <p>沿用户路径（曝光→点击→访问→加购→下单→支付）逐层度量转化率与流失率，定位流量损耗环节，指导优化优先级。</p>
+      </div>
+      <div class="card method-card">
+        <span class="method-no">04</span>
+        <h3>RFM 模型</h3>
+        <p>用最近一次消费（Recency）、频次（Frequency）、金额（Monetary）对用户分层，支撑精细化运营与差异化触达。</p>
+      </div>
+      <div class="card method-card">
+        <span class="method-no">05</span>
+        <h3>AARRR 海盗指标</h3>
+        <p>获客（Acquisition）、激活（Activation）、留存（Retention）、变现（Revenue）、推荐（Referral）——用户增长分析的完整框架。</p>
+      </div>
+      <div class="card method-card">
+        <span class="method-no">06</span>
+        <h3>A/B 实验</h3>
+        <p>假设→分流→检验→决策。关注样本量、显著性水平与辛普森悖论等陷阱，用数据验证策略有效性。</p>
+      </div>
+      <div class="card method-card">
+        <span class="method-no">07</span>
+        <h3>同期群分析（Cohort）</h3>
+        <p>按获客时间或特征分组，追踪不同 cohort 的留存与行为差异，比整体均值更能暴露真实趋势。</p>
+      </div>
+      <div class="card method-card">
+        <span class="method-no">08</span>
+        <h3>归因分析</h3>
+        <p>首次/末次触点、线性、时间衰减等归因模型，评估各渠道与动作对转化的真实贡献。</p>
+      </div>
+      <div class="card method-card">
+        <span class="method-no">09</span>
+        <h3>对比与下钻分析</h3>
+        <p>横向对比（竞对/渠道/人群）、纵向对比（同比/环比），配合维度下钻逐层定位问题根因。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BI -->
+  <section id="bi" class="section reveal">
+    <h2 class="section-title">BI 知识</h2>
+    <div class="card bi-card">
+      <h3>📐 指标体系设计</h3>
+      <p>OSM 模型（目标→策略→度量）：先明确业务目标，再定策略，最后落到可度量的指标。北极星指标 + 派生指标树，保证「看见的数字都能回答业务问题」。</p>
+    </div>
+    <div class="card bi-card">
+      <h3>🗂️ 数据建模</h3>
+      <p>星型模型：事实表（交易、行为）+ 维度表（用户、商品、时间）。在 Power BI 中使用 DAX 构建度量值，遵循「度量值与计算列」的取舍原则；Tableau 中善用 LOD 表达式处理不同粒度的聚合。</p>
+    </div>
+    <div class="card bi-card">
+      <h3>🖥️ 看板设计原则</h3>
+      <ul>
+        <li>一屏一个主题：概览→诊断→明细的三层下钻结构</li>
+        <li>图表选型：趋势用折线、构成用堆叠/占比、对比用条形、分布用直方</li>
+        <li>5 秒原则：核心 KPI 放在最左上，异常用颜色预警</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- AI -->
+  <section id="ai" class="section reveal">
+    <h2 class="section-title">AI × 数据分析</h2>
+    <div class="ai-grid">
+      <div class="card">
+        <h3>💬 LLM 辅助分析</h3>
+        <p>用大模型做 SQL 生成、代码解释、报告初稿。经验：提供表结构 + 示例数据 + 明确输出格式，准确率大幅提升。</p>
+      </div>
+      <div class="card">
+        <h3>🧠 分析思维迁移</h3>
+        <p>AI 时代分析师的核心价值：定义问题、判断数据质量、验证结论、业务 storytelling——而不是写 SQL 本身。</p>
+      </div>
+      <div class="card">
+        <h3>⚙️ AI 工作流</h3>
+        <p>把重复分析沉淀为 Prompt 模板与 Agent 流程：取数 → 清洗 → 分析 → 生成周报，人只做最后的审阅与洞察提炼。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 能力进阶路线图 -->
+  <section id="roadmap" class="section reveal">
+    <h2 class="section-title">能力进阶路线图</h2>
+    <p class="section-desc">清楚自己站在哪里，也知道下一步去哪里。</p>
+    <div class="roadmap-grid">
+      <div class="card roadmap-col">
+        <div class="roadmap-head done">✅ 已掌握</div>
+        <ul class="tag-list">
+          <li>数据获取（API / 爬虫 / RPA）</li>
+          <li>清洗整合与主数据表</li>
+          <li>数仓分层设计</li>
+          <li>Snowflake 云数仓</li>
+          <li>Airflow DAG 调度</li>
+          <li>数据质量门禁</li>
+          <li>数据血缘与权限管控</li>
+          <li>BI（Tableau / Power BI / 帆软）</li>
+          <li>指标体系建设</li>
+        </ul>
+      </div>
+      <div class="card roadmap-col">
+        <div class="roadmap-head learning">🔥 学习中</div>
+        <ul class="tag-list">
+          <li>SQL 性能优化与成本治理</li>
+          <li>Git 工程化 / CI-CD</li>
+          <li>统计推断与实验设计</li>
+          <li>实时数仓（Kafka / Flink CDC）</li>
+        </ul>
+      </div>
+      <div class="card roadmap-col">
+        <div class="roadmap-head planned">🎯 规划中</div>
+        <ul class="tag-list">
+          <li>元数据平台（DataHub）</li>
+          <li>指标中台 / 数据服务化</li>
+          <li>轻量 ML 建模</li>
+          <li>AI Agent 分析工作流</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 笔记 -->
+  <section id="notes" class="section reveal">
+    <h2 class="section-title">学习笔记</h2>
+    <p class="section-desc">记录学习心得与踩坑总结，持续更新中。</p>
+    <div class="notes-list" id="notesList">
+      <!-- 笔记由 js/notes.js 渲染 -->
+    </div>
+  </section>
+
+  <!-- 联系 -->
+  <section id="contact" class="section reveal">
+    <h2 class="section-title">联系我</h2>
+    <div class="card contact-card">
+      <p>欢迎交流数据分析、BI 建模与 AI 应用相关话题。</p>
+      <ul class="contact-list">
+        <li>📧 邮箱：your.email@example.com</li>
+        <li>💼 LinkedIn / 脉脉：你的主页链接</li>
+        <li>🐙 GitHub：github.com/yourname</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Ethan · 用数据讲述业务故事</p>
+  </div>
+</footer>
+
+<!-- 环节详情弹窗 -->
+<div class="modal" id="stageModal" hidden>
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-box" role="dialog" aria-modal="true">
+    <button class="modal-close" data-close aria-label="关闭">✕</button>
+    <h3 id="modalTitle"></h3>
+    <p class="modal-goal" id="modalGoal"></p>
+    <ul class="detail-list" id="modalList"></ul>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script src="js/notes.js"></script>
+</body>
+</html>
