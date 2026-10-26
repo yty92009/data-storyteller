@@ -1,42 +1,52 @@
 // AI Skill 收藏数据：收录实用的开源 Agent Skill（SKILL.md）
 // 新增技能只需在数组里加一项
 // 每条技能固定四块：intro 简介 / effect 作用 / url 公开地址 / tips 使用技巧
+// 内容以技能作者的描述与 README 为依据
 // tag 用于分类筛选
 const skills = [
   {
     tag: '需求澄清',
     title: 'Grill Me',
     author: 'Matt Pocock',
-    intro: '一个「拷问式」需求澄清技能。核心理念：AI 动手之前，人必须先想清楚——它把这一步变成了强制流程。',
-    effect: '在 AI 开始任何实现之前，用 10~15 个针对性问题逐层盘问你的想法：目标是什么、边界在哪里、例外怎么处理……直到产出一份双方确认的简短 spec，然后才开工。有效杜绝 AI 自作主张、理解偏差导致的返工。',
-    url: 'https://github.com/mattpocock/skills',
-    tips: `【安装】把仓库中的 skills/grill-me 目录复制到 ~/.claude/skills/
+    intro: '作者定位它是一场「毫不留情的访谈（relentless interview）」：针对你的计划或设计，走遍决策树的每一条分支，直到你和 AI 达成真正的共识（shared understanding）。',
+    effect: '一次只问一个问题，绝不一次性甩给你一堆问题；每个问题都附带 AI 自己的推荐答案，让你是在「回应一个方案」而不是面对空白输入框发呆。能通过读代码回答的问题，它会自己去读而不是问你。整个过程把每一个隐含决策都显性化——「重点不是快速达成一致，而是不让任何重要的事被默默假设」。技能本身无状态（stateless）：不写任何文件，唯一的产物是对话中被打磨清晰的理解。',
+    url: 'https://github.com/mattpocock/skills/tree/main/skills/productivity/grill-me',
+    tips: `【安装】（作者提供的一行命令）
+npx skills add mattpocock/skills --skill=grill-me
+更新：npx skills update grill-me
 
-【调用】在 Claude Code 对话中输入：
-/grill-me 我想做一个销售额异动监控看板
+【调用】必须手动输入 /grill-me——作者明确说明：agent 不会自己主动使用它
 
-【技巧】
-1. 需求越模糊，越该先用它——被问到答不上来的地方，就是需求里没想清楚的地方
-2. 数据类需求搭配指标口径文档一起给，它盘问的维度会更准
-3. 结束时让它输出一份 spec 存档，作为开发依据和后续验收标准`
+【使用时机】作者的原文是：在「计划感觉大致靠谱、但你隐约察觉还有未解决的决策藏在里面」的时候用它——正是要把软肋找出来、逼到台面上
+
+【相关技能】同仓库还有三个变体：
+- grill-with-docs：同样的访谈，但会把决策沉淀为 ADR 文档和术语表
+- wayfinder：项目大到一次会话装不下、路线还模糊时，先画决策地图
+- to-spec：访谈结束后，把共识直接合成一份 spec 文档`
   },
   {
     tag: '设计美化',
     title: 'Taste',
     author: 'Leonxlnx',
-    intro: '一个给 coding agent 注入「设计品味」的技能，专治 AI 生成界面的千篇一律。',
-    effect: '让 AI 从你的 brief 主动推断设计方向，并严格约束字体、配色、布局与组件选择，生成真正「被设计过」的网页和应用界面，摆脱一眼就能看穿的 AI 模板感（AI slop）。',
-    url: 'https://github.com/leonxlnx/taste-skill',
+    intro: '作者的定义非常直白：「给你的 AI 好品味（gives your AI good taste），阻止 AI 生成无聊、平庸的模板货」——一套面向 AI Agent 的反模板（Anti-Slop）前端技能。',
+    effect: '用可移植的 Agent Skill 升级 AI 生成的界面：更强的布局、字体排印、动效与留白，而不是千篇一律的样板 UI。默认主技能 design-taste-frontend（v2）基于对 247 个精选设计站点的研究构建：AI 先盘点项目独有的东西，脚本会从 20 种设计方向、48 种 Hero 方案、172 种区块布局、44 种字体系统、56 种配色中发牌给你三选；再用真实浏览器检查器对页面做「AI 模板味」体检——眉毛标题、等宽字体标签、01/02/03 编号、发丝线、渐变、紫色系等经典 AI 味一律判不合格；最后用截图做一轮 look-and-fix。兼容 React / Vue / Svelte，规则约束的是设计意图而非框架 API。',
+    url: 'https://github.com/Leonxlnx/taste-skill',
     tips: `【安装】
-git clone https://github.com/leonxlnx/taste-skill
-把其中的技能目录复制到 ~/.claude/skills/
+npx skills add https://github.com/Leonxlnx/taste-skill
+只装主技能：
+npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend"
 
-【调用】agent 设计网站 / 看板 / 汇报页面时自动生效
+【Claude Code 插件方式安装】（无需 npx，技能自动加 taste-skill: 前缀）
+/plugin marketplace add Leonxlnx/taste-skill
+/plugin install taste-skill@taste-skill
 
-【技巧】
-1. brief 里给出现众与场景（如「给高管看的经营看板」），它选的配色和布局会明显更贴切
-2. 丢 1~2 个你觉得好看的参考网站，它会对齐那种审美风格
-3. 不满意就让它「换个设计方向重推」，多轮迭代后产出稳定得多`
+【环境要求】v2 需要 Node 22+ 和 Chrome / Edge / Chromium（真实浏览器检查器要用）
+
+【按需选装】每个技能只干一件事，不必全装：
+- redesign-existing-projects：改造已有项目，先审计 UI 再修
+- high-end-visual-design / minimalist-ui / industrial-brutalist-ui：风格已定时的专项强化
+- gpt-taste：给 GPT / Codex 用的更严格变体
+- image-to-code：先出参考图 → 分析 → 再实现代码的图像优先流程`
   }
 ];
 
