@@ -1,73 +1,35 @@
-// AI Skill 收藏数据：新增技能只需在数组里加一项
-// tag 用于分类筛选；prompt 为可直接复制使用的内容（模板、指令、技巧说明）
+// AI Skill 收藏数据：收录实用的开源 Agent Skill（SKILL.md）
+// 新增技能只需在数组里加一项
+// tag 用于分类筛选；url 为技能来源仓库；usage 为安装/使用方式（可复制）
 const skills = [
   {
-    tag: '提示词',
-    title: 'SQL 生成器',
-    desc: '让 LLM 按我的表结构生成可靠的 SQL。实测准确率最高的结构。',
-    prompt: `你是一名资深数据工程师。请根据以下信息编写 SQL：
-1. 表结构（DDL + 字段业务含义）：
-【粘贴建表语句】
-2. 示例数据（2~3 行）：
-【粘贴样例】
-3. 需求：【用业务语言描述，说明口径】
-要求：只输出 SQL，不要解释；SQL 中用注释标出每个关键过滤条件；如果需求有歧义，先列出你的假设。`
+    tag: '需求澄清',
+    title: 'Grill Me',
+    author: 'Matt Pocock',
+    url: 'https://github.com/mattpocock/skills',
+    desc: '在动手写任何代码之前，AI 会用 10~15 个针对性问题「拷问」你的想法——把模糊的意图盘问成一份明确的 spec，确认后才开工。杜绝 AI 自作主张、减少返工。',
+    why: '数据需求最常见的坑就是「需求方自己也没想清楚」。用它澄清分析需求和数据开发任务，盘完往往省掉一半沟通成本。',
+    usage: `安装：把仓库中的 skills/grill-me 目录复制到 ~/.claude/skills/
+
+使用：在 Claude Code 对话中输入
+/grill-me 我想做一个销售额异动监控看板
+
+AI 会逐个提问澄清口径、维度、触发条件……
+直到产出一份双方确认的简短 spec，再开始实现。`
   },
   {
-    tag: '提示词',
-    title: '指标异动归因助手',
-    desc: '让 AI 按维度拆解思路辅助定位异动，输出结构化的排查清单。',
-    prompt: `核心指标【指标名】从【A】降到【B】，降幅 X%。
-可用维度：【时间/地区/渠道/品类…】
-请帮我：
-1. 给出按维度拆解的排查顺序（优先级 + 理由）
-2. 每一步需要什么数据，给出对应 SQL 思路
-3. 列出 3 个最可能的业务原因假设`
-  },
-  {
-    tag: '提示词',
-    title: '数据周报初稿生成',
-    desc: '把关键指标数据喂给 AI，生成结构化周报初稿，人只做洞察提炼。',
-    prompt: `你是我的数据分析助理。以下是我负责业务的本周核心数据：
-【粘贴指标数据：本周值 / 上周值 / 环比】
-请生成周报初稿，结构：
-1. 整体概况（一段话）
-2. 指标异动提示（环比变化超 X% 的项）
-3. 待关注的 3 个问题（附数据依据）
-语气：客观、简洁、面向管理层。不要编造数据之外的原因。`
-  },
-  {
-    tag: '工作流',
-    title: 'AI 辅助代码审查',
-    desc: '提交 DAG 任务前，把 SQL/Python 代码丢给 AI 做一次预审查。',
-    prompt: `请审查这段数据处理代码，重点检查：
-1. 空值与异常值是否处理
-2. 重复数据风险（join 导致的膨胀）
-3. 时间边界与口径是否一致
-4. 性能问题（全表扫描、数据倾斜）
-代码：【粘贴】`
-  },
-  {
-    tag: '工作流',
-    title: '新数据源快速理解',
-    desc: '接手陌生表/新数据源时，用 AI 快速摸清结构和业务含义。',
-    prompt: `这是一个我不熟悉的数据表：
-【粘贴 DDL + 样例数据】
-请帮我推断：
-1. 这张表的主键和粒度（一行代表什么）
-2. 每个字段的业务含义猜测
-3. 可能的数据质量问题（列出不放心、需要验证的点）`
-  },
-  {
-    tag: '工具技巧',
-    title: '让 AI 学会你的口径',
-    desc: '把公司的指标口径文档做成「口径卡片」，每次对话先贴给 AI，回答口径问题不再跑偏。',
-    prompt: `【长期复用】把下面内容存成片段，每次涉及指标计算时先发送：
-我们公司的指标口径如下：
-- GMV = 下游订单金额，含取消，不含退款
-- 活跃用户 = 当日产生订单行为（不含浏览）
-- ……
-基于以上口径回答我的问题，口径冲突时以本卡片为准。`
+    tag: '设计美化',
+    title: 'Taste',
+    author: 'Leonxlnx',
+    url: 'https://github.com/leonxlnx/taste-skill',
+    desc: '给 coding agent 注入「设计品味」：从你的 brief 推断设计方向，主动约束字体、配色、布局与组件选择，让 AI 生成的网页和应用界面摆脱千篇一律的模板感（AI slop）。',
+    why: '分析师做看板、做汇报页面经常被说「不像人做的」。这个技能让 AI 真正去「设计」而不是「拼凑」，是我做 BI 界面的秘密武器。',
+    usage: `安装：
+git clone https://github.com/leonxlnx/taste-skill
+把其中的技能目录复制到 ~/.claude/skills/
+
+使用：让 agent 设计网站 / 界面时自动生效，
+也可在提示中明确指定按 Taste 的设计流程执行。`
   }
 ];
 
@@ -85,14 +47,18 @@ function esc(s) {
 }
 function renderSkills(tag) {
   const list = tag === '全部' ? skills : skills.filter(s => s.tag === tag);
-  grid.innerHTML = list.map((s, i) => `
+  grid.innerHTML = list.map(s => `
     <article class="card skill-item">
-      <div class="note-meta"><span class="note-tag">${s.tag}</span></div>
+      <div class="note-meta">
+        <span class="note-tag">${s.tag}</span>
+        <span>👤 <a href="${s.url}" target="_blank" rel="noopener" class="accent">${s.author}</a></span>
+      </div>
       <h3>${s.title}</h3>
       <p>${s.desc}</p>
+      <p><strong style="color: var(--text);">💡 为什么收藏：</strong>${s.why}</p>
       <div class="prompt-box">
-        <button class="copy-btn" data-idx="${skills.indexOf(s)}" aria-label="复制">📋 复制</button>
-        <pre>${esc(s.prompt)}</pre>
+        <button class="copy-btn" data-copy="${encodeURIComponent(s.usage)}" aria-label="复制">📋 复制</button>
+        <pre>${esc(s.usage)}</pre>
       </div>
     </article>
   `).join('');
@@ -112,8 +78,7 @@ filterBox.addEventListener('click', e => {
 grid.addEventListener('click', e => {
   const btn = e.target.closest('.copy-btn');
   if (!btn) return;
-  const idx = Number(btn.dataset.idx);
-  navigator.clipboard.writeText(skills[idx].prompt).then(() => {
+  navigator.clipboard.writeText(decodeURIComponent(btn.dataset.copy)).then(() => {
     const original = btn.textContent;
     btn.textContent = '✅ 已复制';
     setTimeout(() => { btn.textContent = original; }, 1500);
