@@ -49,7 +49,7 @@ npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-fro
 - image-to-code：先出参考图 → 分析 → 再实现代码的图像优先流程`
   },
   {
-    tag: '部署托管',
+    tag: '网站部署平台',
     title: 'Netlify',
     author: 'Netlify',
     intro: '面向现代 Web 的应用部署平台：连接 Git 仓库后，push 即上线，是国内开发者最常用的 GitHub 联动托管方案之一。',
@@ -66,7 +66,7 @@ npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-fro
 3. 注意：*.netlify.app 域名在国内部分网络环境访问不稳定，建议绑定自定义域名`
   },
   {
-    tag: '部署托管',
+    tag: '网站部署平台',
     title: 'Cloudflare Pages',
     author: 'Cloudflare',
     intro: 'Cloudflare 推出的前端部署平台，背靠 Cloudflare 全球 anycast 网络，是同类免费方案中国内可访问性最好的选择之一。',
