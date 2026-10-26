@@ -175,6 +175,31 @@ nav a:hover { color: var(--accent); }
 /* AI */
 .ai-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 20px; }
 
+/* AI Skill 收藏夹 */
+.skill-filter { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+.filter-btn {
+  padding: 7px 20px; border-radius: 999px; cursor: pointer; font-size: .9rem;
+  border: 1.5px solid var(--border); background: var(--card); color: var(--muted);
+  font-family: inherit; transition: all .15s;
+}
+.filter-btn:hover { border-color: var(--accent); color: var(--accent); }
+.filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.prompt-box { position: relative; margin-top: 14px; }
+.prompt-box pre {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 10px;
+  padding: 14px; padding-bottom: 12px; margin: 0;
+  font-size: .8rem; line-height: 1.6; color: var(--muted);
+  white-space: pre-wrap; word-break: break-word;
+  max-height: 220px; overflow-y: auto;
+}
+.copy-btn {
+  position: absolute; top: 8px; right: 8px; z-index: 1;
+  padding: 4px 12px; border-radius: 8px; cursor: pointer; font-size: .78rem;
+  border: 1px solid var(--border); background: var(--card); color: var(--muted);
+  font-family: inherit;
+}
+.copy-btn:hover { color: var(--accent); border-color: var(--accent); }
+
 /* Notes */
 .notes-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-top: 20px; }
 .note-meta { font-size: .82rem; color: var(--muted); margin-bottom: 8px; display: flex; gap: 10px; }

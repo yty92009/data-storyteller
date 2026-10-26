@@ -31,7 +31,8 @@ const observer = new IntersectionObserver(entries => {
 }, { threshold: 0.08 });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// 数据链路环节详情弹窗
+// 数据链路环节详情弹窗（仅首页有此模块，二级页面跳过）
+const stageModalEl = document.getElementById('stageModal');
 const STAGES = {
   acquire: {
     title: '📥 数据获取',
@@ -75,34 +76,36 @@ const STAGES = {
   }
 };
 
-const modal = document.getElementById('stageModal');
-const modalTitle = document.getElementById('modalTitle');
-const modalGoal = document.getElementById('modalGoal');
-const modalList = document.getElementById('modalList');
+const modal = stageModalEl;
+if (modal) {
+  const modalTitle = document.getElementById('modalTitle');
+  const modalGoal = document.getElementById('modalGoal');
+  const modalList = document.getElementById('modalList');
 
-function openStage(key) {
-  const s = STAGES[key];
-  if (!s) return;
-  modalTitle.textContent = s.title;
-  modalGoal.textContent = s.goal;
-  modalList.innerHTML = s.items.map(it =>
-    `<li><strong>${it.name}</strong><span>${it.desc}</span></li>`
-  ).join('');
-  modal.hidden = false;
-  document.body.style.overflow = 'hidden';
+  function openStage(key) {
+    const s = STAGES[key];
+    if (!s) return;
+    modalTitle.textContent = s.title;
+    modalGoal.textContent = s.goal;
+    modalList.innerHTML = s.items.map(it =>
+      `<li><strong>${it.name}</strong><span>${it.desc}</span></li>`
+    ).join('');
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeStage() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.pipe-node').forEach(btn =>
+    btn.addEventListener('click', () => openStage(btn.dataset.stage))
+  );
+  modal.querySelectorAll('[data-close]').forEach(el =>
+    el.addEventListener('click', closeStage)
+  );
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && !modal.hidden) closeStage();
+  });
 }
-
-function closeStage() {
-  modal.hidden = true;
-  document.body.style.overflow = '';
-}
-
-document.querySelectorAll('.pipe-node').forEach(btn =>
-  btn.addEventListener('click', () => openStage(btn.dataset.stage))
-);
-modal.querySelectorAll('[data-close]').forEach(el =>
-  el.addEventListener('click', closeStage)
-);
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape' && !modal.hidden) closeStage();
-});
