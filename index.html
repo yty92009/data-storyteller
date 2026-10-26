@@ -19,6 +19,7 @@
       <a href="#methods">分析方法</a>
       <a href="#bi">BI</a>
       <a href="#ai">AI</a>
+      <a href="#biai">BI+AI</a>
       <a href="#roadmap">路线图</a>
       <a href="#notes">笔记</a>
       <a href="#contact">联系</a>
@@ -33,7 +34,7 @@
     <div class="hero-text">
       <p class="eyebrow">Business Data Analyst</p>
       <h1>你好，我是 <span class="accent">Ethan</span></h1>
-      <p class="lead">一名贴近业务的数据分析师——<strong>从业务问题出发，用数据回答</strong>。既能打通从数据获取、数仓开发到治理调度的全链路技术，也能把数字翻译成业务语言。这里记录我学到的技能、方法论与思考。</p>
+      <p class="lead">一名贴近业务的数据分析师——<strong>从业务问题出发，用数据回答</strong>。过去深耕数据体系搭建、工作流与 BI，现在正向 <strong>BI + AI</strong> 转型。这里记录我学到的技能、方法论与思考。</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#skills">浏览技能</a>
         <a class="btn btn-ghost" href="#notes">学习笔记</a>
@@ -59,7 +60,8 @@
       <div class="card">
         <h3>👋 简介</h3>
         <p>我是一名贴近业务的数据分析师。我相信数据的价值不在取数本身，而在回答业务问题——所以我的工作从理解业务开始：分摊规则怎么定、口径为什么对不上、指标异常背后是哪个业务动作。</p>
-        <p>同时，我掌握从数据获取、数仓开发到调度运维、数据治理的全链路技术能力，能把自己的业务想法亲手落地成数据，而不是把需求转手给别人。擅长把复杂的业务问题拆解为可量化的分析问题，用业务语言而非技术语言传递洞察。</p>
+        <p>过去几年，我的工作聚焦在<strong>数据体系搭建、数据工作流与 BI</strong>：从数据获取、数仓开发到调度运维、数据治理的全链路，再到指标体系与可视化看板，能把自己的业务想法亲手落地成数据，而不是把需求转手给别人。</p>
+        <p>现在，我正在向 <strong>BI + AI</strong> 转型：探索用大模型重塑分析工作流——智能问数、AI 报告生成、指标异动智能归因。我相信 BI 的确定性 + AI 的灵活性，是数据分析的下一个形态。</p>
       </div>
       <div class="card">
         <h3>🎯 专注领域</h3>
@@ -175,7 +177,8 @@
 
   <!-- BI -->
   <section id="bi" class="section reveal">
-    <h2 class="section-title">BI 知识</h2>
+    <h2 class="section-title">BI 与数据体系</h2>
+    <p class="section-desc">我深耕多年的领域：数据体系搭建、工作流与可视化。</p>
     <div class="card bi-card">
       <h3>📐 指标体系设计</h3>
       <p>OSM 模型（目标→策略→度量）：先明确业务目标，再定策略，最后落到可度量的指标。北极星指标 + 派生指标树，保证「看见的数字都能回答业务问题」。</p>
@@ -192,23 +195,56 @@
         <li>5 秒原则：核心 KPI 放在最左上，异常用颜色预警</li>
       </ul>
     </div>
+    <div class="card bi-card">
+      <h3>🔄 报表工作流自动化</h3>
+      <p>让数据自己跑起来：定时调度 + 每日数据推送 + 自动化报表分发。从「人找数」到「数找人」，把分析师从重复取数中解放出来。</p>
+    </div>
   </section>
 
   <!-- AI -->
   <section id="ai" class="section reveal">
-    <h2 class="section-title">AI × 数据分析</h2>
+    <h2 class="section-title">AI 能力</h2>
+    <p class="section-desc">正在系统学习的方向：用大模型武装分析工作。</p>
     <div class="ai-grid">
       <div class="card">
-        <h3>💬 LLM 辅助分析</h3>
-        <p>用大模型做 SQL 生成、代码解释、报告初稿。经验：提供表结构 + 示例数据 + 明确输出格式，准确率大幅提升。</p>
+        <h3>💬 LLM 基础</h3>
+        <p>理解大模型的能力边界：上下文窗口、幻觉、温度参数——知道 AI 擅长什么、什么时候不可信，是用好它的前提。</p>
       </div>
       <div class="card">
-        <h3>🧠 分析思维迁移</h3>
-        <p>AI 时代分析师的核心价值：定义问题、判断数据质量、验证结论、业务 storytelling——而不是写 SQL 本身。</p>
+        <h3>🧠 Prompt 工程</h3>
+        <p>结构化提示词：角色 + 背景 + 任务 + 输出格式。经验：给模型提供表结构 DDL 和示例数据，SQL 生成准确率大幅提升。</p>
       </div>
       <div class="card">
-        <h3>⚙️ AI 工作流</h3>
-        <p>把重复分析沉淀为 Prompt 模板与 Agent 流程：取数 → 清洗 → 分析 → 生成周报，人只做最后的审阅与洞察提炼。</p>
+        <h3>🤖 AI Agent 与自动化</h3>
+        <p>Agent = LLM + 工具 + 循环。探索用 Agent 串联取数、清洗、分析环节，把重复性分析工作交给流程完成。</p>
+      </div>
+      <div class="card">
+        <h3>🛠️ AI 工具箱</h3>
+        <p>日常使用：ChatGPT / Claude 做思路推演与代码生成，AI 编程助手加速数据开发，AI 辅助读文档、学新工具。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BI + AI -->
+  <section id="biai" class="section reveal">
+    <h2 class="section-title">BI + AI 转型方向</h2>
+    <p class="section-desc">我正在探索的下一站：BI 的确定性 + AI 的灵活性。</p>
+    <div class="ai-grid">
+      <div class="card">
+        <h3>🗣️ ChatBI / 智能问数</h3>
+        <p>用自然语言直接查数：「上个月华东区销售额环比多少？」AI 翻译成 SQL 并返回图表。业务自助取数的终极形态，也是我重点关注的落地场景。</p>
+      </div>
+      <div class="card">
+        <h3>📝 AI 报告生成</h3>
+        <p>指标数据喂给大模型，自动生成日报/周报初稿——数字描述、异动提示、图表配文，人只做最后的洞察提炼与业务判断。</p>
+      </div>
+      <div class="card">
+        <h3>🔎 指标异动智能归因</h3>
+        <p>销售额跌了 8%，AI 自动拆解维度（地区×品类×渠道）定位异动来源，把过去半天的下钻分析压缩到几分钟。</p>
+      </div>
+      <div class="card">
+        <h3>🤖 分析 Agent 工作流</h3>
+        <p>把「取数 → 清洗 → 分析 → 成文」整条链路编排成 Agent 流程，基于我搭的数据体系运行——数据地基是我打的，AI 才跑得稳。</p>
       </div>
     </div>
   </section>
@@ -235,6 +271,7 @@
       <div class="card roadmap-col">
         <div class="roadmap-head learning">🔥 学习中</div>
         <ul class="tag-list">
+          <li>Prompt 工程 / LLM 应用</li>
           <li>SQL 性能优化与成本治理</li>
           <li>Git 工程化 / CI-CD</li>
           <li>统计推断与实验设计</li>
@@ -244,10 +281,11 @@
       <div class="card roadmap-col">
         <div class="roadmap-head planned">🎯 规划中</div>
         <ul class="tag-list">
+          <li>ChatBI / 智能问数落地</li>
+          <li>指标异动智能归因</li>
+          <li>分析 Agent 工作流</li>
           <li>元数据平台（DataHub）</li>
           <li>指标中台 / 数据服务化</li>
-          <li>轻量 ML 建模</li>
-          <li>AI Agent 分析工作流</li>
         </ul>
       </div>
     </div>
