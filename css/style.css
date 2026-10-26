@@ -184,6 +184,13 @@ nav a:hover { color: var(--accent); }
 }
 .filter-btn:hover { border-color: var(--accent); color: var(--accent); }
 .filter-btn.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+.skill-block { margin-top: 14px; }
+.skill-block > strong {
+  display: block; font-size: .85rem; color: var(--accent);
+  margin-bottom: 4px; letter-spacing: .5px;
+}
+.skill-block > p { font-size: .9rem; }
+.skill-block a { word-break: break-all; }
 .prompt-box { position: relative; margin-top: 14px; }
 .prompt-box pre {
   background: var(--bg); border: 1px solid var(--border); border-radius: 10px;
