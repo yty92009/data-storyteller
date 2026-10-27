@@ -214,6 +214,14 @@ a.method-card:hover h3 { color: var(--accent); }
 .pitfall-list li { color: var(--muted); font-size: .9rem; padding: 3px 0; }
 .prev-next { display: flex; gap: 12px; justify-content: space-between; flex-wrap: wrap; margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--border); }
 
+/* 方法配图 */
+.method-fig {
+  margin: 16px 0 6px; background: var(--bg);
+  border: 1px solid var(--border); border-radius: 12px; padding: 16px;
+}
+.method-fig svg { width: 100%; height: auto; display: block; }
+.method-fig figcaption { font-size: .8rem; color: var(--muted); margin-top: 10px; text-align: center; }
+
 /* BI */
 .bi-card { margin-top: 20px; }
 .bi-card ul { margin-left: 20px; }

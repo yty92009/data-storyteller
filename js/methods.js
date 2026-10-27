@@ -37,11 +37,18 @@
   const prev = METHODS[(idx - 1 + METHODS.length) % METHODS.length];
   const next = METHODS[(idx + 1) % METHODS.length];
 
+  let fig = '';
+  if (typeof METHOD_FIGURES !== 'undefined' && METHOD_FIGURES[m.id]) {
+    fig = '<figure class="method-fig">' + METHOD_FIGURES[m.id].svg
+      + '<figcaption>' + METHOD_FIGURES[m.id].caption + '</figcaption></figure>';
+  }
+
   detail.innerHTML =
     '<article class="card method-detail-card">' +
     '  <div class="note-meta"><span class="note-tag">' + m.no + ' · ' + m.en + '</span></div>' +
     '  <h3 class="method-detail-title">' + m.icon + ' ' + m.name + '</h3>' +
     '  <p class="term-oneline">' + m.oneline + '</p>' +
+    fig +
 
     '  <div class="skill-block"><strong>📖 详解</strong>' +
     m.intro.map(p => '<p>' + p + '</p>').join('') + '</div>' +
