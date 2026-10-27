@@ -47,13 +47,31 @@ body {
 .logo .accent, .accent { color: var(--accent); }
 nav {
   display: flex; flex-wrap: nowrap; justify-content: flex-end;
-  min-width: 0; overflow-x: auto; scrollbar-width: none;
+  align-items: center; min-width: 0;
 }
-nav::-webkit-scrollbar { display: none; }
 nav a {
   color: var(--muted); text-decoration: none; margin: 0 8px; font-size: .92rem;
   white-space: nowrap; flex-shrink: 0;
 }
+
+/* 导航下拉菜单：AI 资源 */
+.nav-drop { position: relative; display: flex; align-items: center; height: 60px; }
+.nav-drop-btn {
+  background: none; border: none; font-family: inherit; font-size: .92rem;
+  color: var(--muted); cursor: pointer; margin: 0 8px; padding: 0; white-space: nowrap;
+}
+.nav-drop-btn:hover { color: var(--accent); }
+.nav-drop-menu {
+  display: none; position: absolute; top: 100%; right: 0;
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  box-shadow: var(--shadow); padding: 8px; min-width: 190px; z-index: 300;
+}
+.nav-drop-menu a {
+  display: block; margin: 0; padding: 9px 12px; border-radius: 8px;
+  font-size: .9rem; white-space: nowrap; color: var(--text);
+}
+.nav-drop-menu a:hover { background: var(--accent-light); color: var(--accent); }
+.nav-drop:hover .nav-drop-menu, .nav-drop.open .nav-drop-menu { display: block; }
 nav a:hover { color: var(--accent); }
 .theme-toggle, .menu-btn {
   background: none; border: 1px solid var(--border); border-radius: 8px;
@@ -359,8 +377,14 @@ footer {
     overflow-y: auto; max-height: calc(100vh - 60px);
   }
   #nav.open { display: flex; }
-  #nav a { margin: 0; padding: 10px 4px; border-bottom: 1px dashed var(--border); font-size: .95rem; }
-  #nav a:last-child { border-bottom: none; }
+  #nav > a { margin: 0; padding: 10px 4px; border-bottom: 1px dashed var(--border); font-size: .95rem; }
+  #nav > a:last-of-type { border-bottom: none; }
+  .nav-drop { display: block; height: auto; }
+  .nav-drop-btn { width: 100%; text-align: left; margin: 0; padding: 10px 4px; border-bottom: 1px dashed var(--border); }
+  .nav-drop:hover .nav-drop-menu { display: none; }
+  .nav-drop.open .nav-drop-menu { display: block; }
+  .nav-drop-menu { position: static; box-shadow: none; border: none; background: transparent; padding: 0 0 0 14px; min-width: 0; }
+  .nav-drop-menu a { padding: 10px 4px; color: var(--muted); }
 }
 @media (max-width: 860px) {
   .hero-inner, .about-grid, .skills-grid, .methods-grid, .ai-grid, .roadmap-grid, .notes-list {

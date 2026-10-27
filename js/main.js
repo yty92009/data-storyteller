@@ -20,6 +20,22 @@ nav.querySelectorAll('a').forEach(a =>
   a.addEventListener('click', () => nav.classList.remove('open'))
 );
 
+// 「AI 资源」下拉菜单（触屏 / 移动端点击展开，桌面端悬停展开）
+document.querySelectorAll('.nav-drop-btn').forEach(btn =>
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const drop = btn.parentElement;
+    const wasOpen = drop.classList.contains('open');
+    document.querySelectorAll('.nav-drop.open').forEach(d => d.classList.remove('open'));
+    if (!wasOpen) drop.classList.add('open');
+  })
+);
+document.addEventListener('click', e => {
+  if (!e.target.closest('.nav-drop')) {
+    document.querySelectorAll('.nav-drop.open').forEach(d => d.classList.remove('open'));
+  }
+});
+
 // 滚动渐入动画
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => {
