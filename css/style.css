@@ -197,6 +197,17 @@ nav a:hover { color: var(--accent); }
 
 /* AI 基础知识 */
 .term-card { scroll-margin-top: 80px; }
+.overview-card { grid-column: 1 / -1; }
+.overview-card h3 { font-size: 1.25rem; }
+.overview-flow {
+  font-family: Consolas, "Courier New", monospace; font-size: .85rem; line-height: 1.8;
+  background: var(--bg); border: 1px solid var(--border); border-radius: 10px;
+  padding: 14px 16px; color: var(--muted); margin: 12px 0;
+}
+.overview-formula {
+  color: var(--accent); font-weight: 700; font-size: 1.05rem;
+  text-align: center; margin: 14px 0;
+}
 .term-en { font-size: .78rem; font-weight: 400; color: var(--muted); }
 .term-oneline {
   color: var(--accent); font-weight: 600; font-size: .95rem;
@@ -204,6 +215,10 @@ nav a:hover { color: var(--accent); }
   background: var(--accent-light); border-radius: 8px;
 }
 .term-detail { font-size: .92rem; }
+.term-example {
+  font-size: .88rem; color: var(--muted);
+  border-top: 1px dashed var(--border); margin-top: 12px; padding-top: 10px;
+}
 .prompt-box { position: relative; margin-top: 14px; }
 .prompt-box pre {
   background: var(--bg); border: 1px solid var(--border); border-radius: 10px;
