@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AI 能力：LLM 基础、Prompt 工程、AI Agent 与自动化、AI 工具箱">
+<title>AI 能力 · 数据分析知识库</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a class="logo" href="index.html">📊 <span>数据分析·知识库</span></a>
+        <nav id="nav">
+      <a href="about.html">关于我</a>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" type="button">专业能力 ▾</button>
+      <div class="nav-drop-menu">
+        <a href="pipeline.html">🔗 个人技能</a>
+        <a href="methods.html">📐 分析方法</a>
+        <a href="bi.html">📊 BI 与数据体系</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" type="button" style="color: var(--accent); font-weight: 600;">AI 实践 ▾</button>
+      <div class="nav-drop-menu">
+        <a href="ai.html" style="color: var(--accent); font-weight: 600;">🤖 AI 能力</a>
+        <a href="biai.html">🎯 BI+AI 转型</a>
+        <a href="ai-basics.html">📚 AI 基础知识</a>
+        <a href="toolbox.html">🧰 AI 工具箱</a>
+        <a href="skills.html">🧩 Skill 收藏夹</a>
+        <a href="agent-projects.html">🚀 Agent 项目</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" type="button">成长 ▾</button>
+      <div class="nav-drop-menu">
+        <a href="roadmap.html">🗺️ 能力路线图</a>
+        <a href="notes.html">📝 学习笔记</a>
+      </div>
+    </div>
+      <a href="index.html#contact">联系</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌙</button>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<section class="hero" style="padding: 48px 0 24px;">
+  <div class="container">
+    <p class="eyebrow">AI Capability</p>
+    <h1 style="font-size: 2rem; margin: 10px 0;">🤖 AI 能力</h1>
+    <p class="lead">正在系统学习的方向：用大模型武装分析工作。</p>
+    <p style="margin-top: 14px;"><a href="index.html" class="accent">← 返回主页</a></p>
+  </div>
+</section>
+
+<main class="container" style="padding-bottom: 40px;">
+<section id="ai" class="section reveal">
+    <h2 class="section-title">AI 能力</h2>
+    <p class="section-desc">正在系统学习的方向：用大模型武装分析工作。</p>
+    <div class="ai-grid">
+      <div class="card">
+        <h3>💬 LLM 基础</h3>
+        <p>理解大模型的能力边界：上下文窗口、幻觉、温度参数——知道 AI 擅长什么、什么时候不可信，是用好它的前提。</p>
+      </div>
+      <div class="card">
+        <h3>🧠 Prompt 工程</h3>
+        <p>结构化提示词：角色 + 背景 + 任务 + 输出格式。经验：给模型提供表结构 DDL 和示例数据，SQL 生成准确率大幅提升。</p>
+      </div>
+      <div class="card">
+        <h3>🤖 AI Agent 与自动化</h3>
+        <p>Agent = LLM + 工具 + 循环。探索用 Agent 串联取数、清洗、分析环节，把重复性分析工作交给流程完成。</p>
+      </div>
+    </div>
+    <div class="card" style="margin-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+      <div>
+        <h3 style="margin-bottom: 4px;">📚 AI 基础知识</h3>
+        <p>什么是 LLM、Agent、Skill、MCP、RAG？用数据分析的语言，把核心概念一次讲清楚。</p>
+      </div>
+      <a class="btn btn-primary" href="ai-basics.html">开始阅读 →</a>
+    </div>
+    <div class="card" style="margin-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+      <div>
+        <h3 style="margin-bottom: 4px;">🧰 AI 工具箱</h3>
+        <p>实战验证过的 AI 工具：对话助手、AI 编程、自动化编排（n8n / 影刀 RPA）、网站部署平台。</p>
+      </div>
+      <a class="btn btn-primary" href="toolbox.html">进入工具箱 →</a>
+    </div>
+    <div class="card" style="margin-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
+      <div>
+        <h3 style="margin-bottom: 4px;">🧩 Skill 收藏夹</h3>
+        <p>我收集并验证过的开源 Agent Skill（Grill Me、Taste），附安装方式与使用心得。</p>
+      </div>
+      <a class="btn btn-primary" href="skills.html">进入收藏夹 →</a>
+    </div>
+  </section>
+
+  <!-- BI + AI -->
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Ethan · 用数据讲述业务故事</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/skills.js"></script>
+</body>
+</html>

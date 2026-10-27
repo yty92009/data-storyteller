@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ethan 的学习笔记：数据分析、BI、AI 相关的心得与踩坑总结">
+<title>学习笔记 · 数据分析知识库</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📝</text></svg>">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a class="logo" href="index.html">📊 <span>数据分析·知识库</span></a>
+        <nav id="nav">
+      <a href="about.html">关于我</a>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" type="button">专业能力 ▾</button>
+      <div class="nav-drop-menu">
+        <a href="pipeline.html">🔗 个人技能</a>
+        <a href="methods.html">📐 分析方法</a>
+        <a href="bi.html">📊 BI 与数据体系</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" type="button">AI 实践 ▾</button>
+      <div class="nav-drop-menu">
+        <a href="ai.html">🤖 AI 能力</a>
+        <a href="biai.html">🎯 BI+AI 转型</a>
+        <a href="ai-basics.html">📚 AI 基础知识</a>
+        <a href="toolbox.html">🧰 AI 工具箱</a>
+        <a href="skills.html">🧩 Skill 收藏夹</a>
+        <a href="agent-projects.html">🚀 Agent 项目</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" type="button">成长 ▾</button>
+      <div class="nav-drop-menu">
+        <a href="roadmap.html">🗺️ 能力路线图</a>
+        <a href="notes.html" style="color: var(--accent); font-weight: 600;">📝 学习笔记</a>
+      </div>
+    </div>
+      <a href="index.html#contact">联系</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌙</button>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<section class="hero" style="padding: 48px 0 24px;">
+  <div class="container">
+    <p class="eyebrow">Notes</p>
+    <h1 style="font-size: 2rem; margin: 10px 0;">📝 学习笔记</h1>
+    <p class="lead">记录学习心得与踩坑总结，持续更新中。</p>
+    <p style="margin-top: 14px;"><a href="index.html" class="accent">← 返回主页</a></p>
+  </div>
+</section>
+
+<main class="container" style="padding-bottom: 40px;">
+<section id="notes" class="section reveal">
+    <h2 class="section-title">学习笔记</h2>
+    <p class="section-desc">记录学习心得与踩坑总结，持续更新中。</p>
+    <div class="notes-list" id="notesList">
+      <!-- 笔记由 js/notes.js 渲染 -->
+    </div>
+  </section>
+
+  <!-- 联系 -->
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Ethan · 用数据讲述业务故事</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/notes.js"></script>
+<script src="js/skills.js"></script>
+</body>
+</html>

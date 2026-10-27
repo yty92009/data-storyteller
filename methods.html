@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ethan 常用的 9 个分析方法：5W2H、杜邦、流量漏斗、RFM、AARRR、A/B 实验、Cohort、归因、对比下钻">
+<title>分析方法 · 数据分析知识库</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📐</text></svg>">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a class="logo" href="index.html">📊 <span>数据分析·知识库</span></a>
+        <nav id="nav">
+      <a href="about.html">关于我</a>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" type="button">专业能力 ▾</button>
+      <div class="nav-drop-menu">
+        <a href="pipeline.html">🔗 个人技能</a>
+        <a href="methods.html" style="color: var(--accent); font-weight: 600;">📐 分析方法</a>
+        <a href="bi.html">📊 BI 与数据体系</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" type="button">AI 实践 ▾</button>
+      <div class="nav-drop-menu">
+        <a href="ai.html">🤖 AI 能力</a>
+        <a href="biai.html">🎯 BI+AI 转型</a>
+        <a href="ai-basics.html">📚 AI 基础知识</a>
+        <a href="toolbox.html">🧰 AI 工具箱</a>
+        <a href="skills.html">🧩 Skill 收藏夹</a>
+        <a href="agent-projects.html">🚀 Agent 项目</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" type="button">成长 ▾</button>
+      <div class="nav-drop-menu">
+        <a href="roadmap.html">🗺️ 能力路线图</a>
+        <a href="notes.html">📝 学习笔记</a>
+      </div>
+    </div>
+      <a href="index.html#contact">联系</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌙</button>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<section class="hero" style="padding: 48px 0 24px;">
+  <div class="container">
+    <p class="eyebrow">Analytical Methods</p>
+    <h1 style="font-size: 2rem; margin: 10px 0;">📐 分析方法</h1>
+    <p class="lead">9 个经过实战检验的分析方法，每个都注明适用场景与关键陷阱。</p>
+    <p style="margin-top: 14px;"><a href="index.html" class="accent">← 返回主页</a></p>
+  </div>
+</section>
+
+<main class="container" style="padding-bottom: 40px;">
+<section id="methods" class="section reveal">
+    <h2 class="section-title">分析方法</h2>
+    <div class="methods-grid">
+      <div class="card method-card">
+        <span class="method-no">01</span>
+        <h3>5W2H 分析</h3>
+        <p>从 What / Why / Who / When / Where / How / How much 七个维度全面定义业务问题，是需求拆解的第一步。</p>
+      </div>
+      <div class="card method-card">
+        <span class="method-no">02</span>
+        <h3>杜邦分析法</h3>
+        <p>将核心指标逐层拆解为子指标，定位经营问题的驱动因素，常用于营收与利润分析。</p>
+      </div>
+      <div class="card method-card">
+        <span class="method-no">03</span>
+        <h3>流量漏斗分析</h3>
+        <p>沿用户路径（曝光→点击→访问→加购→下单→支付）逐层度量转化率与流失率，定位流量损耗环节，指导优化优先级。</p>
+      </div>
+      <div class="card method-card">
+        <span class="method-no">04</span>
+        <h3>RFM 模型</h3>
+        <p>用最近一次消费（Recency）、频次（Frequency）、金额（Monetary）对用户分层，支撑精细化运营与差异化触达。</p>
+      </div>
+      <div class="card method-card">
+        <span class="method-no">05</span>
+        <h3>AARRR 海盗指标</h3>
+        <p>获客（Acquisition）、激活（Activation）、留存（Retention）、变现（Revenue）、推荐（Referral）——用户增长分析的完整框架。</p>
+      </div>
+      <div class="card method-card">
+        <span class="method-no">06</span>
+        <h3>A/B 实验</h3>
+        <p>假设→分流→检验→决策。关注样本量、显著性水平与辛普森悖论等陷阱，用数据验证策略有效性。</p>
+      </div>
+      <div class="card method-card">
+        <span class="method-no">07</span>
+        <h3>同期群分析（Cohort）</h3>
+        <p>按获客时间或特征分组，追踪不同 cohort 的留存与行为差异，比整体均值更能暴露真实趋势。</p>
+      </div>
+      <div class="card method-card">
+        <span class="method-no">08</span>
+        <h3>归因分析</h3>
+        <p>首次/末次触点、线性、时间衰减等归因模型，评估各渠道与动作对转化的真实贡献。</p>
+      </div>
+      <div class="card method-card">
+        <span class="method-no">09</span>
+        <h3>对比与下钻分析</h3>
+        <p>横向对比（竞对/渠道/人群）、纵向对比（同比/环比），配合维度下钻逐层定位问题根因。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BI -->
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Ethan · 用数据讲述业务故事</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/skills.js"></script>
+</body>
+</html>

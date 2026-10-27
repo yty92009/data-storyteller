@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="能力进阶路线图：已掌握 / 学习中 / 规划中三档能力全景">
+<title>能力路线图 · 数据分析知识库</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a class="logo" href="index.html">📊 <span>数据分析·知识库</span></a>
+        <nav id="nav">
+      <a href="about.html">关于我</a>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" type="button">专业能力 ▾</button>
+      <div class="nav-drop-menu">
+        <a href="pipeline.html">🔗 个人技能</a>
+        <a href="methods.html">📐 分析方法</a>
+        <a href="bi.html">📊 BI 与数据体系</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" type="button">AI 实践 ▾</button>
+      <div class="nav-drop-menu">
+        <a href="ai.html">🤖 AI 能力</a>
+        <a href="biai.html">🎯 BI+AI 转型</a>
+        <a href="ai-basics.html">📚 AI 基础知识</a>
+        <a href="toolbox.html">🧰 AI 工具箱</a>
+        <a href="skills.html">🧩 Skill 收藏夹</a>
+        <a href="agent-projects.html">🚀 Agent 项目</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" type="button">成长 ▾</button>
+      <div class="nav-drop-menu">
+        <a href="roadmap.html" style="color: var(--accent); font-weight: 600;">🗺️ 能力路线图</a>
+        <a href="notes.html">📝 学习笔记</a>
+      </div>
+    </div>
+      <a href="index.html#contact">联系</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌙</button>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<section class="hero" style="padding: 48px 0 24px;">
+  <div class="container">
+    <p class="eyebrow">Roadmap</p>
+    <h1 style="font-size: 2rem; margin: 10px 0;">🗺️ 能力路线图</h1>
+    <p class="lead">清楚自己站在哪里，也知道下一步去哪里。</p>
+    <p style="margin-top: 14px;"><a href="index.html" class="accent">← 返回主页</a></p>
+  </div>
+</section>
+
+<main class="container" style="padding-bottom: 40px;">
+<section id="roadmap" class="section reveal">
+    <h2 class="section-title">能力进阶路线图</h2>
+    <p class="section-desc">清楚自己站在哪里，也知道下一步去哪里。</p>
+    <div class="roadmap-grid">
+      <div class="card roadmap-col">
+        <div class="roadmap-head done">✅ 已掌握</div>
+        <ul class="tag-list">
+          <li>数据获取（API / 爬虫 / RPA）</li>
+          <li>清洗整合与主数据表</li>
+          <li>数仓分层设计</li>
+          <li>Snowflake 云数仓</li>
+          <li>Airflow DAG 调度</li>
+          <li>数据质量门禁</li>
+          <li>数据血缘与权限管控</li>
+          <li>BI（Tableau / Power BI / 帆软）</li>
+          <li>指标体系建设</li>
+        </ul>
+      </div>
+      <div class="card roadmap-col">
+        <div class="roadmap-head learning">🔥 学习中</div>
+        <ul class="tag-list">
+          <li>Prompt 工程 / LLM 应用</li>
+          <li>SQL 性能优化与成本治理</li>
+          <li>Git 工程化 / CI-CD</li>
+          <li>统计推断与实验设计</li>
+          <li>实时数仓（Kafka / Flink CDC）</li>
+        </ul>
+      </div>
+      <div class="card roadmap-col">
+        <div class="roadmap-head planned">🎯 规划中</div>
+        <ul class="tag-list">
+          <li>ChatBI / 智能问数落地</li>
+          <li>指标异动智能归因</li>
+          <li>分析 Agent 工作流</li>
+          <li>元数据平台（DataHub）</li>
+          <li>指标中台 / 数据服务化</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 笔记 -->
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Ethan · 用数据讲述业务故事</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/skills.js"></script>
+</body>
+</html>

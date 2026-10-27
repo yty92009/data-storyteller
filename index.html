@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="业务数据分析师的个人知识库 —— 数据分析技能、方法论、BI 与 AI 知识">
-<title>数据分析 · 个人知识库</title>
+<meta name="description" content="Ethan 的个人知识库：10 年+ 业务数据分析、BI 与 AI 实践——技能、方法论、项目与思考">
+<title>Ethan · 业务数据分析师 · 个人知识库</title>
 <link rel="stylesheet" href="css/style.css">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
 </head>
@@ -46,8 +46,8 @@
       <h1>你好，我是 <span class="accent">Ethan</span></h1>
       <p class="lead">10 年+ 数据领域从业者——从业务一线走到数据管理岗：<strong>从业务问题出发，用数据回答</strong>。走过供应链、BI 咨询、大厂经营分析、销售运营与跨境电商数据管理，现在正向 <strong>BI + AI</strong> 转型。</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#skills">浏览技能</a>
-        <a class="btn btn-ghost" href="#notes">学习笔记</a>
+        <a class="btn btn-primary" href="#explore">开始探索</a>
+        <a class="btn btn-ghost" href="about.html">关于我</a>
       </div>
     </div>
     <div class="hero-card">
@@ -64,252 +64,73 @@
 
 <main class="container">
 
-  <!-- 技能 -->
-  <section id="skills" class="section reveal">
-    <h2 class="section-title">个人技能</h2>
-    <p class="section-desc">覆盖数据获取、数仓开发、调度运维到数据治理的完整数据链路，点击任一环节查看具体技能。</p>
-    <div class="card pipeline-card">
-      <h3>🔗 数据全链路</h3>
-      <div class="pipeline">
-        <button class="pipe-node" data-stage="acquire">
-          <span class="pipe-icon">📥</span>
-          <span class="pipe-name">数据获取</span>
-          <span class="pipe-sub">API · 自动下载 · 爬虫</span>
-        </button>
-        <span class="pipe-arrow" aria-hidden="true">➜</span>
-        <button class="pipe-node" data-stage="develop">
-          <span class="pipe-icon">🧱</span>
-          <span class="pipe-name">数仓开发</span>
-          <span class="pipe-sub">分层建模 · 清洗 · 入库</span>
-        </button>
-        <span class="pipe-arrow" aria-hidden="true">➜</span>
-        <button class="pipe-node" data-stage="schedule">
-          <span class="pipe-icon">⚙️</span>
-          <span class="pipe-name">调度与运维</span>
-          <span class="pipe-sub">Airflow · 质量门禁</span>
-        </button>
-        <span class="pipe-arrow" aria-hidden="true">➜</span>
-        <button class="pipe-node" data-stage="govern">
-          <span class="pipe-icon">🛡️</span>
-          <span class="pipe-name">数据治理</span>
-          <span class="pipe-sub">口径 · 分摊规则 · 血缘 · 权限</span>
-        </button>
-      </div>
-      <p class="pipe-hint">👆 点击任一环节，查看该环节的具体技能与实践</p>
-    </div>
-    <div class="card bi-standalone">
-      <h3>📊 BI 与可视化</h3>
-      <p>基于链路产出的可信数据，搭建看板与指标体系，让数据「看得懂」。</p>
-      <ul class="tag-list">
-        <li>Tableau</li><li>Power BI</li>
-        <li>帆软 FineBI / FineReport</li><li>Quick BI</li>
-        <li>SmartBI</li><li>AntV / ECharts</li><li>指标体系建设</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- 分析方法 -->
-  <section id="methods" class="section reveal">
-    <h2 class="section-title">分析方法</h2>
-    <div class="methods-grid">
-      <div class="card method-card">
-        <span class="method-no">01</span>
-        <h3>5W2H 分析</h3>
-        <p>从 What / Why / Who / When / Where / How / How much 七个维度全面定义业务问题，是需求拆解的第一步。</p>
-      </div>
-      <div class="card method-card">
-        <span class="method-no">02</span>
-        <h3>杜邦分析法</h3>
-        <p>将核心指标逐层拆解为子指标，定位经营问题的驱动因素，常用于营收与利润分析。</p>
-      </div>
-      <div class="card method-card">
-        <span class="method-no">03</span>
-        <h3>流量漏斗分析</h3>
-        <p>沿用户路径（曝光→点击→访问→加购→下单→支付）逐层度量转化率与流失率，定位流量损耗环节，指导优化优先级。</p>
-      </div>
-      <div class="card method-card">
-        <span class="method-no">04</span>
-        <h3>RFM 模型</h3>
-        <p>用最近一次消费（Recency）、频次（Frequency）、金额（Monetary）对用户分层，支撑精细化运营与差异化触达。</p>
-      </div>
-      <div class="card method-card">
-        <span class="method-no">05</span>
-        <h3>AARRR 海盗指标</h3>
-        <p>获客（Acquisition）、激活（Activation）、留存（Retention）、变现（Revenue）、推荐（Referral）——用户增长分析的完整框架。</p>
-      </div>
-      <div class="card method-card">
-        <span class="method-no">06</span>
-        <h3>A/B 实验</h3>
-        <p>假设→分流→检验→决策。关注样本量、显著性水平与辛普森悖论等陷阱，用数据验证策略有效性。</p>
-      </div>
-      <div class="card method-card">
-        <span class="method-no">07</span>
-        <h3>同期群分析（Cohort）</h3>
-        <p>按获客时间或特征分组，追踪不同 cohort 的留存与行为差异，比整体均值更能暴露真实趋势。</p>
-      </div>
-      <div class="card method-card">
-        <span class="method-no">08</span>
-        <h3>归因分析</h3>
-        <p>首次/末次触点、线性、时间衰减等归因模型，评估各渠道与动作对转化的真实贡献。</p>
-      </div>
-      <div class="card method-card">
-        <span class="method-no">09</span>
-        <h3>对比与下钻分析</h3>
-        <p>横向对比（竞对/渠道/人群）、纵向对比（同比/环比），配合维度下钻逐层定位问题根因。</p>
-      </div>
+  <section id="explore" class="section reveal">
+    <h2 class="section-title">探索知识库</h2>
+    <p class="section-desc">每一个板块都是独立页面——点进去，深入阅读。</p>
+    <div class="explore-grid">
+        <a class="card explore-card" href="about.html">
+          <span class="explore-icon">👤</span>
+          <strong class="explore-title">关于我</strong>
+          <span class="explore-desc">10 年+ 经历、重点项目与差异化优势</span>
+        </a>
+        <a class="card explore-card" href="pipeline.html">
+          <span class="explore-icon">🔗</span>
+          <strong class="explore-title">个人技能</strong>
+          <span class="explore-desc">数据全链路四大环节，点击下钻具体技能</span>
+        </a>
+        <a class="card explore-card" href="methods.html">
+          <span class="explore-icon">📐</span>
+          <strong class="explore-title">分析方法</strong>
+          <span class="explore-desc">9 个分析方法速查：场景与陷阱</span>
+        </a>
+        <a class="card explore-card" href="bi.html">
+          <span class="explore-icon">📊</span>
+          <strong class="explore-title">BI 与数据体系</strong>
+          <span class="explore-desc">指标体系、数据建模与看板设计</span>
+        </a>
+        <a class="card explore-card" href="ai.html">
+          <span class="explore-icon">🤖</span>
+          <strong class="explore-title">AI 能力</strong>
+          <span class="explore-desc">LLM、Prompt、Agent 系统学习</span>
+        </a>
+        <a class="card explore-card" href="biai.html">
+          <span class="explore-icon">🎯</span>
+          <strong class="explore-title">BI+AI 转型</strong>
+          <span class="explore-desc">ChatBI、AI 报告与智能归因</span>
+        </a>
+        <a class="card explore-card" href="ai-basics.html">
+          <span class="explore-icon">📚</span>
+          <strong class="explore-title">AI 基础知识</strong>
+          <span class="explore-desc">Agent 全景与 16 个核心概念</span>
+        </a>
+        <a class="card explore-card" href="toolbox.html">
+          <span class="explore-icon">🧰</span>
+          <strong class="explore-title">AI 工具箱</strong>
+          <span class="explore-desc">实战验证的 AI 工具与技巧</span>
+        </a>
+        <a class="card explore-card" href="skills.html">
+          <span class="explore-icon">🧩</span>
+          <strong class="explore-title">Skill 收藏夹</strong>
+          <span class="explore-desc">Grill Me、Taste 等开源 Agent Skill</span>
+        </a>
+        <a class="card explore-card" href="agent-projects.html">
+          <span class="explore-icon">🚀</span>
+          <strong class="explore-title">Agent 项目</strong>
+          <span class="explore-desc">电商问数 NL2SQL 完整拆解</span>
+        </a>
+        <a class="card explore-card" href="roadmap.html">
+          <span class="explore-icon">🗺️</span>
+          <strong class="explore-title">能力路线图</strong>
+          <span class="explore-desc">已掌握 / 学习中 / 规划中</span>
+        </a>
+        <a class="card explore-card" href="notes.html">
+          <span class="explore-icon">📝</span>
+          <strong class="explore-title">学习笔记</strong>
+          <span class="explore-desc">持续沉淀的心得与踩坑</span>
+        </a>
     </div>
   </section>
 
-  <!-- BI -->
-  <section id="bi" class="section reveal">
-    <h2 class="section-title">BI 与数据体系</h2>
-    <p class="section-desc">我深耕多年的领域：数据体系搭建、工作流与可视化。</p>
-    <div class="card bi-card">
-      <h3>📐 指标体系设计</h3>
-      <p>OSM 模型（目标→策略→度量）：先明确业务目标，再定策略，最后落到可度量的指标。北极星指标 + 派生指标树，保证「看见的数字都能回答业务问题」。</p>
-    </div>
-    <div class="card bi-card">
-      <h3>🗂️ 数据建模</h3>
-      <p>星型模型：事实表（交易、行为）+ 维度表（用户、商品、时间）。在 Power BI 中使用 DAX 构建度量值，遵循「度量值与计算列」的取舍原则；Tableau 中善用 LOD 表达式处理不同粒度的聚合。</p>
-    </div>
-    <div class="card bi-card">
-      <h3>🖥️ 看板设计原则</h3>
-      <ul>
-        <li>一屏一个主题：概览→诊断→明细的三层下钻结构</li>
-        <li>图表选型：趋势用折线、构成用堆叠/占比、对比用条形、分布用直方</li>
-        <li>5 秒原则：核心 KPI 放在最左上，异常用颜色预警</li>
-      </ul>
-    </div>
-    <div class="card bi-card">
-      <h3>🔄 报表工作流自动化</h3>
-      <p>让数据自己跑起来：定时调度 + 每日数据推送 + 自动化报表分发。从「人找数」到「数找人」，把分析师从重复取数中解放出来。</p>
-    </div>
-  </section>
-
-  <!-- AI -->
-  <section id="ai" class="section reveal">
-    <h2 class="section-title">AI 能力</h2>
-    <p class="section-desc">正在系统学习的方向：用大模型武装分析工作。</p>
-    <div class="ai-grid">
-      <div class="card">
-        <h3>💬 LLM 基础</h3>
-        <p>理解大模型的能力边界：上下文窗口、幻觉、温度参数——知道 AI 擅长什么、什么时候不可信，是用好它的前提。</p>
-      </div>
-      <div class="card">
-        <h3>🧠 Prompt 工程</h3>
-        <p>结构化提示词：角色 + 背景 + 任务 + 输出格式。经验：给模型提供表结构 DDL 和示例数据，SQL 生成准确率大幅提升。</p>
-      </div>
-      <div class="card">
-        <h3>🤖 AI Agent 与自动化</h3>
-        <p>Agent = LLM + 工具 + 循环。探索用 Agent 串联取数、清洗、分析环节，把重复性分析工作交给流程完成。</p>
-      </div>
-    </div>
-    <div class="card" style="margin-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-      <div>
-        <h3 style="margin-bottom: 4px;">📚 AI 基础知识</h3>
-        <p>什么是 LLM、Agent、Skill、MCP、RAG？用数据分析的语言，把核心概念一次讲清楚。</p>
-      </div>
-      <a class="btn btn-primary" href="ai-basics.html">开始阅读 →</a>
-    </div>
-    <div class="card" style="margin-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-      <div>
-        <h3 style="margin-bottom: 4px;">🧰 AI 工具箱</h3>
-        <p>实战验证过的 AI 工具：对话助手、AI 编程、自动化编排（n8n / 影刀 RPA）、网站部署平台。</p>
-      </div>
-      <a class="btn btn-primary" href="toolbox.html">进入工具箱 →</a>
-    </div>
-    <div class="card" style="margin-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-      <div>
-        <h3 style="margin-bottom: 4px;">🧩 Skill 收藏夹</h3>
-        <p>我收集并验证过的开源 Agent Skill（Grill Me、Taste），附安装方式与使用心得。</p>
-      </div>
-      <a class="btn btn-primary" href="skills.html">进入收藏夹 →</a>
-    </div>
-  </section>
-
-  <!-- BI + AI -->
-  <section id="biai" class="section reveal">
-    <h2 class="section-title">BI + AI 转型方向</h2>
-    <p class="section-desc">我正在探索的下一站：BI 的确定性 + AI 的灵活性。</p>
-    <div class="ai-grid">
-      <div class="card">
-        <h3>🗣️ ChatBI / 智能问数</h3>
-        <p>用自然语言直接查数：「上个月华东区销售额环比多少？」AI 翻译成 SQL 并返回图表。业务自助取数的终极形态，也是我重点关注的落地场景。</p>
-      </div>
-      <div class="card">
-        <h3>📝 AI 报告生成</h3>
-        <p>指标数据喂给大模型，自动生成日报/周报初稿——数字描述、异动提示、图表配文，人只做最后的洞察提炼与业务判断。</p>
-      </div>
-      <div class="card">
-        <h3>🔎 指标异动智能归因</h3>
-        <p>销售额跌了 8%，AI 自动拆解维度（地区×品类×渠道）定位异动来源，把过去半天的下钻分析压缩到几分钟。</p>
-      </div>
-      <div class="card">
-        <h3>🤖 分析 Agent 工作流</h3>
-        <p>把「取数 → 清洗 → 分析 → 成文」整条链路编排成 Agent 流程，基于我搭的数据体系运行——数据地基是我打的，AI 才跑得稳。</p>
-      </div>
-    </div>
-    <div class="card" style="margin-top: 20px; display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap;">
-      <div>
-        <h3 style="margin-bottom: 4px;">🚀 Agent 项目实战</h3>
-        <p>实战学习项目「电商问数」：NL2SQL 智能体的五层架构、九步工作流与关键设计决策。</p>
-      </div>
-      <a class="btn btn-primary" href="agent-projects.html">查看项目 →</a>
-    </div>
-  </section>
-
-  <!-- 能力进阶路线图 -->
-  <section id="roadmap" class="section reveal">
-    <h2 class="section-title">能力进阶路线图</h2>
-    <p class="section-desc">清楚自己站在哪里，也知道下一步去哪里。</p>
-    <div class="roadmap-grid">
-      <div class="card roadmap-col">
-        <div class="roadmap-head done">✅ 已掌握</div>
-        <ul class="tag-list">
-          <li>数据获取（API / 爬虫 / RPA）</li>
-          <li>清洗整合与主数据表</li>
-          <li>数仓分层设计</li>
-          <li>Snowflake 云数仓</li>
-          <li>Airflow DAG 调度</li>
-          <li>数据质量门禁</li>
-          <li>数据血缘与权限管控</li>
-          <li>BI（Tableau / Power BI / 帆软）</li>
-          <li>指标体系建设</li>
-        </ul>
-      </div>
-      <div class="card roadmap-col">
-        <div class="roadmap-head learning">🔥 学习中</div>
-        <ul class="tag-list">
-          <li>Prompt 工程 / LLM 应用</li>
-          <li>SQL 性能优化与成本治理</li>
-          <li>Git 工程化 / CI-CD</li>
-          <li>统计推断与实验设计</li>
-          <li>实时数仓（Kafka / Flink CDC）</li>
-        </ul>
-      </div>
-      <div class="card roadmap-col">
-        <div class="roadmap-head planned">🎯 规划中</div>
-        <ul class="tag-list">
-          <li>ChatBI / 智能问数落地</li>
-          <li>指标异动智能归因</li>
-          <li>分析 Agent 工作流</li>
-          <li>元数据平台（DataHub）</li>
-          <li>指标中台 / 数据服务化</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- 笔记 -->
-  <section id="notes" class="section reveal">
-    <h2 class="section-title">学习笔记</h2>
-    <p class="section-desc">记录学习心得与踩坑总结，持续更新中。</p>
-    <div class="notes-list" id="notesList">
-      <!-- 笔记由 js/notes.js 渲染 -->
-    </div>
-  </section>
-
-  <!-- 联系 -->
   <section id="contact" class="section reveal">
     <h2 class="section-title">联系我</h2>
     <div class="card contact-card">
@@ -324,22 +145,12 @@
 
 </main>
 
+
 <footer>
   <div class="container">
     <p>© 2026 Ethan · 用数据讲述业务故事</p>
   </div>
 </footer>
-
-<!-- 环节详情弹窗 -->
-<div class="modal" id="stageModal" hidden>
-  <div class="modal-backdrop" data-close></div>
-  <div class="modal-box" role="dialog" aria-modal="true">
-    <button class="modal-close" data-close aria-label="关闭">✕</button>
-    <h3 id="modalTitle"></h3>
-    <p class="modal-goal" id="modalGoal"></p>
-    <ul class="detail-list" id="modalList"></ul>
-  </div>
-</div>
 
 <script src="js/main.js"></script>
 <script src="js/notes.js"></script>

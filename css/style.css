@@ -392,6 +392,25 @@ nav a:hover { color: var(--accent); }
 .strength-item strong { display: block; margin-bottom: 4px; }
 .strength-item span { font-size: .88rem; color: var(--muted); }
 
+/* 主页探索目录 */
+.explore-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+.explore-card {
+  display: flex; flex-direction: column; gap: 4px; text-decoration: none;
+  padding: 20px 22px;
+}
+.explore-icon { font-size: 1.6rem; }
+.explore-title { color: var(--text); font-size: 1.02rem; }
+.explore-desc { color: var(--muted); font-size: .86rem; }
+.explore-card:hover { border-color: var(--accent); }
+.explore-card:hover .explore-title { color: var(--accent); }
+
+@media (max-width: 980px) {
+  .explore-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .explore-grid { grid-template-columns: 1fr; }
+}
+
 @media (max-width: 860px) {
   .proj-grid, .strength-grid { grid-template-columns: 1fr; }
   .tl-time { margin-left: 0; width: 100%; }

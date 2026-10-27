@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="BI 知识：指标体系设计（OSM）、数据建模、看板设计原则与报表工作流自动化">
+<title>BI 与数据体系 · 数据分析知识库</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a class="logo" href="index.html">📊 <span>数据分析·知识库</span></a>
+        <nav id="nav">
+      <a href="about.html">关于我</a>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" type="button">专业能力 ▾</button>
+      <div class="nav-drop-menu">
+        <a href="pipeline.html">🔗 个人技能</a>
+        <a href="methods.html">📐 分析方法</a>
+        <a href="bi.html" style="color: var(--accent); font-weight: 600;">📊 BI 与数据体系</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" type="button">AI 实践 ▾</button>
+      <div class="nav-drop-menu">
+        <a href="ai.html">🤖 AI 能力</a>
+        <a href="biai.html">🎯 BI+AI 转型</a>
+        <a href="ai-basics.html">📚 AI 基础知识</a>
+        <a href="toolbox.html">🧰 AI 工具箱</a>
+        <a href="skills.html">🧩 Skill 收藏夹</a>
+        <a href="agent-projects.html">🚀 Agent 项目</a>
+      </div>
+    </div>
+    <div class="nav-drop">
+      <button class="nav-drop-btn" type="button">成长 ▾</button>
+      <div class="nav-drop-menu">
+        <a href="roadmap.html">🗺️ 能力路线图</a>
+        <a href="notes.html">📝 学习笔记</a>
+      </div>
+    </div>
+      <a href="index.html#contact">联系</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌙</button>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<section class="hero" style="padding: 48px 0 24px;">
+  <div class="container">
+    <p class="eyebrow">BI & Data System</p>
+    <h1 style="font-size: 2rem; margin: 10px 0;">📊 BI 与数据体系</h1>
+    <p class="lead">我深耕多年的领域：数据体系搭建、工作流与可视化。</p>
+    <p style="margin-top: 14px;"><a href="index.html" class="accent">← 返回主页</a></p>
+  </div>
+</section>
+
+<main class="container" style="padding-bottom: 40px;">
+<section id="bi" class="section reveal">
+    <h2 class="section-title">BI 与数据体系</h2>
+    <p class="section-desc">我深耕多年的领域：数据体系搭建、工作流与可视化。</p>
+    <div class="card bi-card">
+      <h3>📐 指标体系设计</h3>
+      <p>OSM 模型（目标→策略→度量）：先明确业务目标，再定策略，最后落到可度量的指标。北极星指标 + 派生指标树，保证「看见的数字都能回答业务问题」。</p>
+    </div>
+    <div class="card bi-card">
+      <h3>🗂️ 数据建模</h3>
+      <p>星型模型：事实表（交易、行为）+ 维度表（用户、商品、时间）。在 Power BI 中使用 DAX 构建度量值，遵循「度量值与计算列」的取舍原则；Tableau 中善用 LOD 表达式处理不同粒度的聚合。</p>
+    </div>
+    <div class="card bi-card">
+      <h3>🖥️ 看板设计原则</h3>
+      <ul>
+        <li>一屏一个主题：概览→诊断→明细的三层下钻结构</li>
+        <li>图表选型：趋势用折线、构成用堆叠/占比、对比用条形、分布用直方</li>
+        <li>5 秒原则：核心 KPI 放在最左上，异常用颜色预警</li>
+      </ul>
+    </div>
+    <div class="card bi-card">
+      <h3>🔄 报表工作流自动化</h3>
+      <p>让数据自己跑起来：定时调度 + 每日数据推送 + 自动化报表分发。从「人找数」到「数找人」，把分析师从重复取数中解放出来。</p>
+    </div>
+  </section>
+
+  <!-- AI -->
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Ethan · 用数据讲述业务故事</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/skills.js"></script>
+</body>
+</html>
