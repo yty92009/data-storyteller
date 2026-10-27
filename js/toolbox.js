@@ -41,6 +41,30 @@ const tools = [
 4. Cursor 官网：https://cursor.com`
   },
   {
+    tag: '自动化与编排',
+    title: 'n8n',
+    author: 'n8n',
+    intro: '开源的工作流自动化平台：可视化编排定时触发、SQL 查询、条件分支、HTTP 调用与消息推送，也是 AI Agent 的编排底座。',
+    effect: '在我的经营异常预警项目中承担核心执行层：定时取数、数据质量检查、Agent 路由、失败重试、钉钉 Webhook 通知和 ERP 反馈回收。确定性流程交给 n8n，AI 只负责理解与判断——稳定可解释。',
+    url: 'https://n8n.io',
+    tips: `【实战技巧】
+1. 明确规则的路由用 Switch / IF 节点，别让 LLM 自由决定——确定性优先
+2. 失败重试与告警是工作流的标配，不是可选项
+3. 与 RAGFlow 同 Docker 网络时可直接用容器名访问 API`
+  },
+  {
+    tag: '自动化与编排',
+    title: '影刀 RPA',
+    author: '影刀',
+    intro: '国产 RPA 工具：把人工在网页和软件里的重复操作录制成自动化流程，擅长处理没有 API 的系统。',
+    effect: '解决「最后一公里」取数问题：平台后台数据下载、报表导出、批量录入等无接口场景，全部由 RPA 定时执行，配合 Python 做批量处理，把人工从重复操作中解放出来。',
+    url: 'https://www.yingdao.com',
+    tips: `【实战技巧】
+1. 先问有没有 API——有接口走接口，没有才用 RPA 兜底
+2. 流程要设计异常处理：页面改版、加载超时都要有兜底分支
+3. 产出文件统一目录规范，下游自动化才能无缝衔接`
+  },
+  {
     tag: '网站部署平台',
     title: 'Netlify',
     author: 'Netlify',
