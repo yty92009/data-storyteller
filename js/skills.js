@@ -47,6 +47,28 @@ npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-fro
 - high-end-visual-design / minimalist-ui / industrial-brutalist-ui：风格已定时的专项强化
 - gpt-taste：给 GPT / Codex 用的更严格变体
 - image-to-code：先出参考图 → 分析 → 再实现代码的图像优先流程`
+  },
+  {
+    tag: '演示制作',
+    title: 'PPT Master',
+    author: '何雨果 Hugo He',
+    intro: '作者的核心主张：「可编辑早已是及格线——真正拉开差距的是原生深度」。AI 生成的是一份真正的 PowerPoint：母版、原生形状、数据驱动的图表与表格，而不是一堆扁平文本框，也不是套模板填空的结果。',
+    effect: '一套在有 Agent 能力的 AI 工具里运行的工作流：把 PDF / DOCX / 文字材料丢进 projects/ 目录，AI 先替你把逻辑理顺、再谈视觉，在本机生成原生可编辑的 .pptx。产出带完整 PowerPoint 行为：页间转场、可按需开启的入场动画、演讲者备注可一键合成音频旁白、图表和表格可作为带数据的原生对象导出；还能从你的参考资料提炼品牌风格，「套模板」把新内容填进已有 .pptx 并保留原设计。三个承诺：成本透明（只有自己的模型用量）、数据不出本地、不锁定平台（Claude / GPT / Gemini / Kimi 均可驱动）。',
+    url: 'https://github.com/hugohe3/ppt-master',
+    tips: `【安装】前置只需 Python 3.10+，作者最推荐用 Claude Code 驱动
+npx skills add hugohe3/ppt-master
+（或 Claude Code 内：/plugin marketplace add hugohe3/ppt-master，再 /plugin install ppt-master@ppt-master）
+安装后需在目录里执行 pip install -r requirements.txt
+
+【使用】用 Agent 打开 ppt-master 目录 → 材料放入 projects/ → 聊天里说：
+「请用 projects/xxx/report.pdf 生成一份 PPT」
+加一句「快速生成，不用跟我确认」可跳过设计规范确认环节
+
+【技巧】
+1. Windows 用户先看作者的手把手安装指南（docs/zh/windows-installation.md），PATH 与执行策略有坑
+2. 模型决定上限：作者推荐大上下文模型（Kimi K3 / Claude，~100 万 token）+ AI 生图（gpt-image-2）
+3. 别指望一把出完美成品——它干掉枯燥的部分，打磨留给你；原生可编辑正是为了让你接着改
+4. 已有公司模板？直接说「套模板」，新内容填进现有 .pptx 且保留原设计`
   }
 ];
 
