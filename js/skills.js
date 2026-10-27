@@ -1,7 +1,7 @@
-// AI Skill 收藏数据：收录实用的开源 Agent Skill（SKILL.md）与 AI 工作流相关工具
+// AI Skill 收藏数据：收录实用的开源 Agent Skill（SKILL.md）
 // 新增技能只需在数组里加一项
 // 每条技能固定四块：intro 简介 / effect 作用 / url 公开地址 / tips 使用技巧
-// 内容以官方描述与实际使用经验为依据
+// 内容以技能作者的描述与 README 为依据
 // tag 用于分类筛选
 const skills = [
   {
@@ -47,40 +47,6 @@ npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-fro
 - high-end-visual-design / minimalist-ui / industrial-brutalist-ui：风格已定时的专项强化
 - gpt-taste：给 GPT / Codex 用的更严格变体
 - image-to-code：先出参考图 → 分析 → 再实现代码的图像优先流程`
-  },
-  {
-    tag: '网站部署平台',
-    title: 'Netlify',
-    author: 'Netlify',
-    intro: '面向现代 Web 的应用部署平台：连接 Git 仓库后，push 即上线，是国内开发者最常用的 GitHub 联动托管方案之一。',
-    effect: '自动构建与持续部署：每次 git push 触发重新部署，约 1 分钟全网生效；免费提供 HTTPS 证书、自定义域名绑定与全球 CDN 加速；纯静态网站（HTML/CSS/JS）可以零配置直接部署。适合作为个人网站、作品集与静态项目的发布通道。',
-    url: 'https://www.netlify.com',
-    tips: `【部署三步】
-1. 用 GitHub 账号登录 app.netlify.com
-2. Add new site → Import an existing project → 选中仓库
-3. 纯静态项目：Build command 留空，Publish directory 填 /
-
-【技巧】
-1. Site configuration → Change site name 可把随机子域名改成语义化名称
-2. 免费额度：每月 100GB 流量、300 次构建，静态站完全够用
-3. 注意：*.netlify.app 域名在国内部分网络环境访问不稳定，建议绑定自定义域名`
-  },
-  {
-    tag: '网站部署平台',
-    title: 'Cloudflare Pages',
-    author: 'Cloudflare',
-    intro: 'Cloudflare 推出的前端部署平台，背靠 Cloudflare 全球 anycast 网络，是同类免费方案中国内可访问性最好的选择之一。',
-    effect: '与 Netlify 同样连接 Git 仓库自动部署，但流量不限量、每月 500 次构建；与 Cloudflare 的 DNS、CDN、Workers 生态无缝衔接，绑定自定义域名后国内可达性明显优于 GitHub Pages 和 Netlify。本网站正托管于此。',
-    url: 'https://pages.cloudflare.com',
-    tips: `【部署三步】
-1. dash.cloudflare.com 用 GitHub 账号注册登录
-2. Workers & Pages（新改版在左侧 Compute 菜单下）→ Create → Pages → 连接仓库
-3. 纯静态项目：Framework preset 选 None，Build command 留空，输出目录填 /
-
-【技巧】
-1. 项目名决定子域名：部署时把项目名设成语义化名称，得到 xxx.pages.dev 干净地址
-2. 同一仓库可以同时挂 GitHub Pages + Cloudflare Pages，push 一次两边同步更新，互为备份
-3. 想再提升国内访问稳定性：买个域名托管到 Cloudflare DNS 并绑定到 Pages 项目`
   }
 ];
 
