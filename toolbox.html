@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Ethan 的 AI 工具箱：对话助手、AI 编程、网站部署平台等日常使用并验证过的 AI 工具">
+<title>AI 工具箱 · 数据分析知识库</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧰</text></svg>">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a class="logo" href="index.html">📊 <span>数据分析·知识库</span></a>
+    <nav id="nav">
+      <a href="index.html#about">关于我</a>
+      <a href="index.html#skills">技能</a>
+      <a href="index.html#methods">分析方法</a>
+      <a href="index.html#bi">BI</a>
+      <a href="index.html#ai">AI</a>
+      <a href="toolbox.html" style="color: var(--accent); font-weight: 600;">AI 工具箱</a>
+      <a href="skills.html">Skill 收藏夹</a>
+      <a href="index.html#roadmap">路线图</a>
+      <a href="index.html#notes">笔记</a>
+      <a href="index.html#contact">联系</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌙</button>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<section class="hero" style="padding: 48px 0 24px;">
+  <div class="container">
+    <p class="eyebrow">AI Toolbox</p>
+    <h1 style="font-size: 2rem; margin: 10px 0;">🧰 AI 工具箱</h1>
+    <p class="lead">我在日常工作与网站搭建中使用、验证过的 AI 工具——<strong>对话助手、AI 编程、网站部署平台</strong>。每一条都注明来源与使用心得，点击「复制」可带走使用技巧。</p>
+  </div>
+</section>
+
+<main class="container" style="padding-bottom: 40px;">
+
+  <div class="skill-filter" id="skillFilter">
+    <button class="filter-btn active" data-tag="全部">全部</button>
+  </div>
+
+  <div class="ai-grid" id="skillGrid" style="margin-top: 24px;">
+    <!-- 工具卡片由 js/toolbox.js 渲染 -->
+  </div>
+
+  <div class="card" style="margin-top: 30px; text-align: center;">
+    <p>💾 工具箱持续更新中。想交流某个工具的使用场景？欢迎<a href="index.html#contact" class="accent">联系我</a>。</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Ethan · 用数据讲述业务故事</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script src="js/toolbox.js"></script>
+</body>
+</html>
