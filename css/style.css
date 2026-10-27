@@ -194,6 +194,25 @@ nav a:hover { color: var(--accent); }
   position: absolute; top: 14px; right: 20px; font-size: 2rem; font-weight: 800;
   color: var(--accent-light); -webkit-text-stroke: 1px var(--accent);
 }
+a.method-card { text-decoration: none; cursor: pointer; display: block; }
+a.method-card:hover { border-color: var(--accent); }
+a.method-card:hover h3 { color: var(--accent); }
+.method-more { display: inline-block; margin-top: 12px; color: var(--accent); font-size: .85rem; font-weight: 600; }
+
+/* 方法详情页 */
+.method-detail-card { padding: 30px; }
+.method-detail-title { font-size: 1.5rem; margin-bottom: 8px; }
+.method-steps { display: grid; gap: 10px; margin-top: 10px; }
+.case-card {
+  background: var(--bg); border: 1px solid var(--border); border-radius: 10px;
+  padding: 14px 16px; margin-top: 12px;
+}
+.case-title { color: var(--text); font-size: .95rem; }
+.case-card p { font-size: .9rem; margin-top: 6px; }
+.case-result { color: #16a34a; font-weight: 600; }
+.pitfall-list { margin-left: 18px; margin-top: 8px; }
+.pitfall-list li { color: var(--muted); font-size: .9rem; padding: 3px 0; }
+.prev-next { display: flex; gap: 12px; justify-content: space-between; flex-wrap: wrap; margin-top: 26px; padding-top: 18px; border-top: 1px solid var(--border); }
 
 /* BI */
 .bi-card { margin-top: 20px; }
