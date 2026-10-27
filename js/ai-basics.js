@@ -121,18 +121,18 @@ const agentOverview = {
 };
 
 // 渲染顶部快速导航
-const nav = document.getElementById('termNav');
-nav.innerHTML = basics.map((b, i) =>
+const termNavBox = document.getElementById('termNav');
+termNavBox.innerHTML = basics.map((b, i) =>
   `<a class="filter-btn" href="#term-${i}" style="text-decoration: none;">${b.term}</a>`
 ).join('');
 
 // 渲染概念卡片
-const grid = document.getElementById('termGrid');
+const termGridEl = document.getElementById('termGrid');
 function esc(s) {
   return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 function renderTerms() {
-  grid.innerHTML = `
+  termGridEl.innerHTML = `
     <article class="card term-card overview-card">
       <h3>🤖 AI Agent 全景</h3>
       <p class="term-oneline">${agentOverview.oneline}</p>
