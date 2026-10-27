@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="电商问数（NL2SQL Agent）完整拆解：系统架构图、九步工作流、LangGraph 设计与逐章学习笔记">
+<title>电商问数 · 项目完整拆解 · 数据分析知识库</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+</head>
+<body>
+
+<header class="navbar">
+  <div class="container nav-inner">
+    <a class="logo" href="index.html">📊 <span>数据分析·知识库</span></a>
+    <nav id="nav">
+      <a href="index.html#about">关于我</a>
+      <a href="index.html#skills">技能</a>
+      <a href="index.html#methods">分析方法</a>
+      <a href="index.html#bi">BI</a>
+      <a href="index.html#ai">AI</a>
+      <a href="toolbox.html">AI 工具箱</a>
+      <a href="skills.html">Skill 收藏夹</a>
+      <a href="ai-basics.html">AI 基础知识</a>
+      <a href="agent-projects.html" style="color: var(--accent); font-weight: 600;">Agent 项目</a>
+      <a href="index.html#roadmap">路线图</a>
+      <a href="index.html#notes">笔记</a>
+      <a href="index.html#contact">联系</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" aria-label="切换主题">🌙</button>
+    <button class="menu-btn" id="menuBtn" aria-label="菜单">☰</button>
+  </div>
+</header>
+
+<section class="hero" style="padding: 48px 0 24px;">
+  <div class="container">
+    <p class="eyebrow">Agent Project Deep Dive</p>
+    <h1 style="font-size: 2rem; margin: 10px 0;">🛒 电商问数 · 项目完整拆解</h1>
+    <p class="lead">NL2SQL 智能体：系统架构 · 智能体九步工作流 · LangGraph 设计 · 逐章学习笔记。归纳自 17 章实战教程（源码 <a href="https://github.com/didilili/shopkeeper-agent" target="_blank" rel="noopener" class="accent">didilili/shopkeeper-agent</a>）。</p>
+    <p style="margin-top: 14px;"><a href="agent-projects.html" class="accent">← 返回 Agent 项目列表</a></p>
+  </div>
+</section>
+
+<main class="container" style="padding-bottom: 40px;">
+
+  <!-- 系统五层架构 -->
+  <section class="section" style="padding: 20px 0 8px;">
+    <h2 class="section-title">一、系统架构：五层分工</h2>
+    <div class="card" style="margin-top: 20px;">
+      <div class="arch-stack">
+        <div class="arch-layer"><strong>🖥️ 服务层</strong><span>FastAPI 接口 + SSE 流式推送 · 前端实时展示每步执行进度 · 日志全链路追踪</span></div>
+        <div class="arch-layer"><strong>🤖 智能体层</strong><span>LangGraph 编排九步问数工作流：Graph（可执行图）· State（共享状态）· Node（单职责节点）· Edge / 条件边（分支）</span></div>
+        <div class="arch-layer"><strong>🔍 检索层</strong><span>Qdrant 向量库：字段与指标的语义检索 · Elasticsearch：字段真实取值的全文检索 · 双路混合召回</span></div>
+        <div class="arch-layer"><strong>📚 知识层</strong><span>元数据知识库：统一管理有哪些表、字段什么含义、指标怎么算、字段有哪些值 · 同步脚本维护入库</span></div>
+        <div class="arch-layer"><strong>🗄️ 数据层</strong><span>MySQL 模拟教学数仓：维度建模（事实表 + 维度表）· 承接分析查询 · 同时保存元数据</span></div>
+      </div>
+      <p class="term-example" style="border-top: none; margin-top: 14px;">💡 一句话：数据层保事实、知识层保口径、检索层保准确、智能体层保推理、服务层保交付。</p>
+    </div>
+  </section>
+
+  <!-- 智能体工作流流程图 -->
+  <section class="section" style="padding: 20px 0 8px;">
+    <h2 class="section-title">二、智能体九步工作流（完整流程图）</h2>
+    <div class="card" style="margin-top: 20px;">
+      <div class="flow">
+        <div class="flow-node flow-start">💬 用户提问<div class="flow-note">「华北地区各品牌的销售总额是多少？」</div></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node">① 关键词抽取<div class="flow-note">jieba 分词 + LLM 提炼检索关键词</div></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-branch-label">三路并行召回（LangGraph 并行边）</div>
+        <div class="flow-branch">
+          <div class="flow-node">② 字段召回<div class="flow-note">Qdrant 语义检索<br>解决「查哪一列」</div></div>
+          <div class="flow-node">③ 指标召回<div class="flow-note">Qdrant 语义检索<br>解决「指标怎么算」</div></div>
+          <div class="flow-node">④ 字段取值召回<div class="flow-note">ES 全文检索<br>解决「条件值怎么写」</div></div>
+        </div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node">⑤ 合并召回信息<div class="flow-note">三路结果去重整合</div></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node">⑥ 过滤指标信息 · 过滤表格信息<div class="flow-note">条件分支：与问题无关的召回内容在此剔除</div></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node">⑦ 补充额外上下文<div class="flow-note">时间口径、默认维度等隐含信息补全</div></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node">⑧ 生成 SQL<div class="flow-note">LLM 基于过滤后的上下文生成（LCEL 链）</div></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node flow-decision">⑨ 校验 SQL<div class="flow-note">列名、表名、语法是否合法（DWMySQLRepository.validate）</div></div>
+        <div class="flow-split">
+          <div class="flow-pass">✅ 校验通过</div>
+          <div class="flow-fail">❌ 校验失败 → ⑩ 校正 SQL（把报错回喂给 LLM 修正）→ 回到校验</div>
+        </div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node">⑪ 执行 SQL<div class="flow-note">在数仓执行查询</div></div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node flow-end">📊 结果 + 执行过程流式返回<div class="flow-note">SSE 推送：前端逐步显示 抽取 → 召回 → 生成 → 校验 → 执行 → 结果</div></div>
+      </div>
+      <p class="term-example">💡 设计要点：校验-校正是带条件边的闭环（生成 ≠ 正确）；三路召回并行执行降低延迟；每个节点只做一件事并返回局部状态更新（LangGraph 的 Node 契约）。</p>
+    </div>
+  </section>
+
+  <!-- LangGraph 设计 -->
+  <section class="section" style="padding: 20px 0 8px;">
+    <h2 class="section-title">三、LangGraph 核心设计</h2>
+    <div class="two-col">
+      <div class="card">
+        <h3>🧩 四个核心概念在本项目的落地</h3>
+        <ul class="detail-list">
+          <li><strong>Graph</strong><span>不是画图，而是可执行的工作流图：graph.py 中注册节点、添加普通边与条件边，START 到 END 即一次完整问数。</span></li>
+          <li><strong>State</strong><span>DataAgentState 保存业务中间结果（关键词、三路召回结果、过滤后上下文、SQL、执行结果），节点间共享而非传参。</span></li>
+          <li><strong>Node</strong><span>每个节点只负责一件事（抽取、召回、合并……），返回局部状态更新——单职责让节点可独立测试。</span></li>
+          <li><strong>Edge / 条件边</strong><span>普通边表示固定顺序（抽取 → 三路召回）；条件边表示运行时分支（校验通过执行、失败进校正）。</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>🛠️ 工程配套</h3>
+        <ul class="detail-list">
+          <li><strong>Runtime Context</strong><span>DataAgentContext 保存运行时工具（LLM 实例、数据库连接），与业务状态分离，依赖注入更干净。</span></li>
+          <li><strong>模型调用三件套</strong><span>统一封装 LLM：模型、temperature、token 上限从配置集中读取（支持硅基流动等 OpenAI 兼容 API），节点只复用不重复初始化。</span></li>
+          <li><strong>提示词集中管理</strong><span>所有 Prompt 集中一处维护，配合 LCEL（LangChain 表达式语言）组装最小链路。</span></li>
+          <li><strong>Streaming</strong><span>节点内写出进度、astream 接收流式输出——每一步执行都能被前端实时看到，也是排查问题的第一现场。</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 逐章笔记 -->
+  <section class="section" style="padding: 20px 0 8px;">
+    <h2 class="section-title">四、逐章学习笔记（17 章）</h2>
+    <div class="chapter-grid">
+      <div class="card chapter-card"><span class="chapter-no">1</span><strong>项目概述与数仓基础</strong><p>NL2SQL 是什么；业务库 vs 数仓的区别；事实表、维度表与维度建模入门。</p></div>
+      <div class="card chapter-card"><span class="chapter-no">2</span><strong>整体架构与智能体流程</strong><p>五层架构总览；元数据知识库 / 向量索引 / 全文索引的职责划分；九步工作流首次完整亮相。</p></div>
+      <div class="card chapter-card"><span class="chapter-no">3</span><strong>开发环境与基础服务</strong><p>环境准备，Docker 拉起 MySQL / Qdrant / ES 等基础服务。</p></div>
+      <div class="card chapter-card"><span class="chapter-no">4</span><strong>项目结构与配置管理</strong><p>目录分层设计；模型、数据库等配置集中管理。</p></div>
+      <div class="card chapter-card"><span class="chapter-no">5</span><strong>Qdrant 与 ES 接入</strong><p>两个检索引擎的快速入门：向量库管语义、全文引擎管取值。</p></div>
+      <div class="card chapter-card"><span class="chapter-no">6</span><strong>MySQL、Embedding 与日志</strong><p>数仓与元数据库落地；文本向量化；统一日志为全链路排查打底。</p></div>
+      <div class="card chapter-card"><span class="chapter-no">7</span><strong>元数据知识库总览</strong><p>知识库的设计思路：为什么表、字段、指标、取值要分门别类管理。</p></div>
+      <div class="card chapter-card"><span class="chapter-no">8</span><strong>表与字段同步入库</strong><p>元数据同步脚本：从数仓读取表结构，写入元数据库。</p></div>
+      <div class="card chapter-card"><span class="chapter-no">9</span><strong>字段与指标检索能力</strong><p>构建向量索引与全文索引，让「语义找字段、全文找取值」成为可能。</p></div>
+      <div class="card chapter-card"><span class="chapter-no">10</span><strong>问数智能体工作流骨架</strong><p>LangGraph 概念落地：定义 State / Context，占位节点，组装图，流式观察执行。</p></div>
+      <div class="card chapter-card"><span class="chapter-no">11</span><strong>关键词抽取与多路召回</strong><p>jieba + LLM 抽取关键词；字段 / 指标 / 取值三路召回的分工与并行实现。</p></div>
+      <div class="card chapter-card"><span class="chapter-no">12</span><strong>召回信息合并与上下文构建</strong><p>三路召回结果的去重、整合，组装成模型友好的上下文。</p></div>
+      <div class="card chapter-card"><span class="chapter-no">13</span><strong>信息过滤与补全</strong><p>过滤与问题无关的指标和表格；补全时间口径等隐含信息——上下文贵在精不在多。</p></div>
+      <div class="card chapter-card"><span class="chapter-no">14</span><strong>SQL 生成与执行闭环</strong><p>生成 → 校验 → 条件分支校正 → 执行；常见坑：Markdown 代码块混入、Unknown column、结果为空。</p></div>
+      <div class="card chapter-card"><span class="chapter-no">15</span><strong>API 接口与 FastAPI 入门</strong><p>用 FastAPI 把智能体能力包装成 HTTP 服务。</p></div>
+      <div class="card chapter-card"><span class="chapter-no">16</span><strong>查询接口实现与依赖组装</strong><p>问数接口实现，依赖注入把配置、LLM、仓储串起来。</p></div>
+      <div class="card chapter-card"><span class="chapter-no">17</span><strong>前后端联调与日志追踪</strong><p>SSE 流式对接前端；用日志回放一次完整请求链路的排查过程。</p></div>
+    </div>
+  </section>
+
+  <!-- 踩坑清单 -->
+  <section class="section" style="padding: 20px 0 8px;">
+    <h2 class="section-title">五、高频问题排查清单</h2>
+    <div class="two-col">
+      <div class="card">
+        <ul class="detail-list">
+          <li><strong>SQL 输出里带了 Markdown 代码块</strong><span>LLM 习惯性输出 ```sql 包裹——提示词里明确「只输出裸 SQL」，解析时再做剥离兜底。</span></li>
+          <li><strong>校验时报 Unknown column</strong><span>模型编造了不存在的列名——回到召回环节，说明字段上下文没给够或没过滤干净。</span></li>
+        </ul>
+      </div>
+      <div class="card">
+        <ul class="detail-list">
+          <li><strong>校验通过但结果为空</strong><span>字段取值映射错了（如「华北」没对上真实枚举值）——检查 ES 取值召回与过滤逻辑。</span></li>
+          <li><strong>校正后仍然失败</strong><span>把报错信息回喂给 LLM 再修一轮，多次失败说明上下文有根本性缺失，别硬循环。</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <div class="card" style="margin-top: 10px; text-align: center;">
+    <p>📌 内容归纳自实战教程学习笔记，持续更新复现进度。想交流？欢迎<a href="index.html#contact" class="accent">联系我</a>。</p>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    <p>© 2026 Ethan · 用数据讲述业务故事</p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
